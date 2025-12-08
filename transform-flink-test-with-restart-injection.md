@@ -904,35 +904,71 @@ Ensure the following dependencies are included in the test's module to use the R
 
 **IMPORTANT**: Flink tests require Java 17 and special Maven options to build and compile.
 
-Before building or running Flink tests with restart injection:
+### Prerequisites
+
+Ensure Java 17 is installed and available:
 
 ```bash
-# Ensure Java 17 is being used
+# Check Java version
 java -version  # Should show Java 17
 
-# If using SDKMAN or similar:
-# sdk use java 17.x.x
+# If using multiple Java versions (SDKMAN, update-alternatives, etc.):
+# Set JAVA_HOME to Java 17
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
 
 # Set required MAVEN_OPTS to allow reflection access
 export MAVEN_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.sql/java.sql=ALL-UNNAMED"
-
-# Then build the tests
-mvn clean test
 ```
 
 The `--add-opens` flags are required for Flink's internal reflection operations to work properly with Java 17's module system.
 
-## Special Considerations for MiniClusterWithClientResource
+### Building the Restart Testing Framework
 
-1. **Cluster Configuration**: The MiniClusterWithClientResource should be configured with `.withHaLeadershipControl()` to enable JobManager restart testing
+**CRITICAL**: The `flink-restart-adapter` module is a standalone module and should be built FIRST before building any test modules that depend on it.
 
-2. **Asynchronous Execution**: To inject restart points during job execution, use `executeAsync()` instead of `execute()`
+```bash
+# Step 1: Build and install the flink-restart-adapter module
+cd flink-restart-adapter
+mvn clean install -DskipTests
 
-3. **Recovery Strategy**: Configure appropriate restart strategies for jobs that should recover from failures:
-   ```java
-   env.setRestartStrategy(RestartStrategies.fixedDelayRestart(3, Time.seconds(1)));
-   ```
+# This installs flink-restart-adapter-2.2.0.jar to your local Maven repository (~/.m2/repository)
+```
 
-4. **Cluster Lifecycle**: Do NOT attempt full cluster restart with MiniClusterWithClientResource; instead, restart individual components (JobManager or TaskManager)
+### Building Test Modules with Restart Dependencies
 
-5. **Test Isolation**: Each test should be independent and not rely on state from previous tests
+After building `flink-restart-adapter`, you can build any of the test modules that have the restart testing dependencies:
+
+```bash
+# Example: Build flink-tests module
+cd flink-tests
+mvn clean test
+
+# Example: Build flink-cep module
+cd flink-libraries/flink-cep
+mvn clean test
+
+# Example: Build all modules from Flink root (not recommended for individual test development)
+cd /path/to/flink
+mvn clean install -DskipTests
+```
+
+### Build Order Summary
+
+```bash
+# 1. Set up Java 17 and MAVEN_OPTS (do this once per terminal session)
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+export MAVEN_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.sql/java.sql=ALL-UNNAMED"
+
+# 2. Build flink-restart-adapter FIRST
+cd flink-restart-adapter
+mvn clean install -DskipTests
+
+# 3. Build test modules (example)
+cd ../flink-tests
+mvn clean test
+
+# Or build a specific test class
+mvn test -Dtest=YourTestClass_RestartInjected
+```
