@@ -1,0 +1,313 @@
+{
+  "tests": [
+    {
+      "testClass": "org.apache.flink.api.connector.source.lib.NumberSequenceSourceITCase_RestartInjected",
+      "testMethod": "testParallelSourceExecution",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_source_ingestion",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.connector.source.lib.NumberSequenceSourceITCase_RestartInjected",
+      "testMethod": "testCheckpointingWithDelayedAssignment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": ["taskmanager", "jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_job_running",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.connector.source.lib.NumberSequenceSourceITCase_RestartInjected",
+      "testMethod": "testLessSplitsThanParallelism",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_task_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchFailoverWithKeyByBarrier",
+      "restartPoints": [
+        {
+          "position": "before_batch_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_batch_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchFailoverWithRebalanceBarrier",
+      "restartPoints": [
+        {
+          "position": "before_batch_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_batch_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchFailoverWithRescaleBarrier",
+      "restartPoints": [
+        {
+          "position": "before_batch_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_batch_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchReduceSingleResultPerKey",
+      "restartPoints": [
+        {
+          "position": "before_batch_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_reduce_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchSumSingleResultPerKey",
+      "restartPoints": [
+        {
+          "position": "before_batch_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_sum_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchKeyedNonKeyedTwoInputOperator",
+      "restartPoints": [
+        {
+          "position": "before_two_input_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_two_input_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchNonKeyedKeyedTwoInputOperator",
+      "restartPoints": [
+        {
+          "position": "before_two_input_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_two_input_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchKeyedBroadcastExecution",
+      "restartPoints": [
+        {
+          "position": "before_broadcast_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_broadcast_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchBroadcastExecution",
+      "restartPoints": [
+        {
+          "position": "before_broadcast_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_broadcast_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchMixedKeyedAndNonKeyedTwoInputOperator",
+      "restartPoints": [
+        {
+          "position": "before_mixed_two_input_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_mixed_two_input_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.api.datastream.DataStreamBatchExecutionITCase_RestartInjected",
+      "testMethod": "batchMixedKeyedAndNonKeyedMultiInputOperator",
+      "restartPoints": [
+        {
+          "position": "before_multi_input_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_multi_input_execution",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.runtime.operators.lifecycle.BoundedSourceITCase_RestartInjected",
+      "testMethod": "test",
+      "restartPoints": [
+        {
+          "position": "before_bounded_source_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_bounded_source_execute",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.runtime.operators.lifecycle.PartiallyFinishedSourcesITCase_RestartInjected",
+      "testMethod": "test",
+      "restartPoints": [
+        {
+          "position": "before_partially_finished_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_partially_finished_execute",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.runtime.operators.lifecycle.StopWithSavepointITCase_RestartInjected",
+      "testMethod": "test",
+      "restartPoints": [
+        {
+          "position": "before_stop_with_savepoint_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_stop_with_savepoint_execute",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.accumulators.AccumulatorITCase_RestartInjected",
+      "testMethod": "testProgram",
+      "restartPoints": [
+        {
+          "position": "before_accumulator_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_accumulator_execute",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.accumulators.AccumulatorLiveITCase_RestartInjected",
+      "testMethod": "testJob",
+      "restartPoints": [
+        {
+          "position": "before_accumulator_live_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_accumulator_live_execute",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    }
+  ]
+}

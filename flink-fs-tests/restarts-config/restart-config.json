@@ -1,0 +1,52 @@
+{
+  "tests": [
+    {
+      "testClass": "org.apache.flink.hdfstests.ContinuousFileProcessingITCase_RestartInjected",
+      "testMethod": "testProgram",
+      "restartPoints": [
+        {
+          "position": "before_file_processing_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_file_processing",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.hdfstests.DistributedCacheDfsTest_RestartInjected",
+      "testMethod": "testDistributedFileViaDFS",
+      "restartPoints": [
+        {
+          "position": "before_dfs_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_dfs_execute",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.hdfstests.DistributedCacheDfsTest_RestartInjected",
+      "testMethod": "testSubmittingJobViaRestClusterClient",
+      "restartPoints": [
+        {
+          "position": "before_rest_client_submit",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_rest_client_execute",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    }
+  ]
+}

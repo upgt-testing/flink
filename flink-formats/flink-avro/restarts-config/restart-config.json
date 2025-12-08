@@ -1,0 +1,84 @@
+{
+  "tests": [
+    {
+      "testClass": "org.apache.flink.formats.avro.AvroOutputFormatITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "before_avro_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_avro_sink_write",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.formats.avro.AvroOutputFormatITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "before_avro_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_avro_sink_write",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected",
+      "testMethod": "testWriteAvroSpecific",
+      "restartPoints": [
+        {
+          "position": "before_avro_specific_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_avro_specific_write",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected",
+      "testMethod": "testWriteAvroGeneric",
+      "restartPoints": [
+        {
+          "position": "before_avro_generic_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_avro_generic_write",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected",
+      "testMethod": "testWriteAvroReflect",
+      "restartPoints": [
+        {
+          "position": "before_avro_reflect_execute",
+          "targets": ["jobmanager"],
+          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+        },
+        {
+          "position": "during_avro_reflect_write",
+          "targets": ["taskmanager"],
+          "modes": ["GRACEFUL", "CRASH"]
+        }
+      ]
+    }
+  ]
+}

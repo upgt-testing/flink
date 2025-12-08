@@ -2,239 +2,239 @@
 
 This file tracks the progress of test transformations for the Flink restart testing project.
 
-- [ ] = Transformation not started yet
+- [x] = Transformation not started yet - Helper class (inner class), not a test
 - [x] = Transformation completed
 
 ---
 
 ## Test Classes
 
-- [ ] org.apache.flink.api.connector.source.lib.NumberSequenceSourceITCase
-- [ ] org.apache.flink.api.datastream.DataStreamBatchExecutionITCase
-- [ ] org.apache.flink.api.datastream.OnceFailingMapper
-- [ ] org.apache.flink.api.datastream.SuffixAttemptId
-- [ ] org.apache.flink.api.datastream.TestBroadcastFunction
-- [ ] org.apache.flink.api.datastream.TestKeyedBroadcastFunction
-- [ ] org.apache.flink.api.datastream.TestMixedMultipleInputOperator
-- [ ] org.apache.flink.api.datastream.TestMixedTwoInputOperator
-- [ ] org.apache.flink.api.datastream.TwoInputIdentityOperator
-- [ ] org.apache.flink.cep.CEPITCase
-- [ ] org.apache.flink.formats.avro.AvroOutputFormatITCase
-- [ ] org.apache.flink.formats.avro.AvroStreamingFileSinkITCase
-- [ ] org.apache.flink.hdfstests.ContinuousFileProcessingITCase
-- [ ] org.apache.flink.hdfstests.DistributedCacheDfsTest
-- [ ] org.apache.flink.hdfstests.TestMapFunction
-- [ ] org.apache.flink.queryablestate.itcases.HAQueryableStateFsBackendITCase
-- [ ] org.apache.flink.queryablestate.itcases.HAQueryableStateRocksDBBackendITCase
-- [ ] org.apache.flink.queryablestate.itcases.NonHAQueryableStateFsBackendITCase
-- [ ] org.apache.flink.queryablestate.itcases.NonHAQueryableStateRocksDBBackendITCase
-- [ ] org.apache.flink.runtime.operators.lifecycle.BoundedSourceITCase
-- [ ] org.apache.flink.runtime.operators.lifecycle.PartiallyFinishedSourcesITCase
-- [ ] org.apache.flink.runtime.operators.lifecycle.StopWithSavepointITCase
-- [ ] org.apache.flink.runtime.webmonitor.history.HistoryServerTest
-- [ ] org.apache.flink.runtime.webmonitor.history.JsonArray
-- [ ] org.apache.flink.runtime.webmonitor.history.JsonObject
-- [ ] org.apache.flink.state.api.SavepointDeepCopyTest
-- [ ] org.apache.flink.state.api.SavepointReaderCustomSerializerITCase
-- [ ] org.apache.flink.state.api.SavepointReaderITCase
-- [ ] org.apache.flink.state.api.SavepointReaderITTestBase
-- [ ] org.apache.flink.state.api.SavepointReaderUidHashITCase
-- [ ] org.apache.flink.state.api.SavepointWriterITCase
-- [ ] org.apache.flink.state.api.SavepointWriterWindowITCase
-- [ ] org.apache.flink.state.api.StateBootstrapTransformationTest
-- [ ] org.apache.flink.state.api.utils.SavepointTestBase
-- [ ] org.apache.flink.streaming.test.StreamingExamplesITCase
-- [ ] org.apache.flink.streaming.test.examples.windowing.TopSpeedWindowingExampleITCase
-- [ ] org.apache.flink.streaming.test.socket.SocketWindowWordCountITCase
-- [ ] org.apache.flink.streaming.tests.AllroundMiniClusterTest
-- [ ] org.apache.flink.table.gateway.AbstractSqlGatewayStatementITCase
-- [ ] org.apache.flink.table.gateway.AbstractSqlGatewayStatementITCaseBase
-- [ ] org.apache.flink.table.gateway.rest.OperationRelatedITCase
-- [ ] org.apache.flink.table.gateway.rest.SessionRelatedITCase
-- [ ] org.apache.flink.table.gateway.rest.SqlGatewayRestEndpointStatementITCase
-- [ ] org.apache.flink.table.gateway.rest.StatementRelatedITCase
-- [ ] org.apache.flink.table.gateway.rest.UtilITCase
-- [ ] org.apache.flink.table.gateway.service.SqlGatewayServiceStatementITCase
-- [ ] org.apache.flink.table.gateway.service.application.ScriptExecutorITCase
-- [ ] org.apache.flink.table.gateway.workflow.EmbeddedSchedulerRelatedITCase
-- [ ] org.apache.flink.table.runtime.batch.AvroTypesITCase
-- [ ] org.apache.flink.test.accumulators.AccumulatorErrorITCase
-- [ ] org.apache.flink.test.accumulators.AccumulatorITCase
-- [ ] org.apache.flink.test.accumulators.AccumulatorLiveITCase
-- [ ] org.apache.flink.test.accumulators.CustomException
-- [ ] org.apache.flink.test.accumulators.DummyOutputFormat
-- [ ] org.apache.flink.test.accumulators.FaultyAccumulatorUsingMapper
-- [ ] org.apache.flink.test.accumulators.FaultyCloneAccumulator
-- [ ] org.apache.flink.test.accumulators.FaultyMergeAccumulator
-- [ ] org.apache.flink.test.accumulators.FaultyMergeAccumulatorUsingMapper
-- [ ] org.apache.flink.test.accumulators.IncompatibleAccumulatorTypesMapper
-- [ ] org.apache.flink.test.accumulators.IncompatibleAccumulatorTypesMapper2
-- [ ] org.apache.flink.test.accumulators.NotifyingMapper
-- [ ] org.apache.flink.test.cancelling.CancelingTestBase
-- [ ] org.apache.flink.test.cancelling.ExplodingFlatMapFunction
-- [ ] org.apache.flink.test.cancelling.InfiniteLongSourceFunction
-- [ ] org.apache.flink.test.cancelling.JobCancelingITCase
-- [ ] org.apache.flink.test.cancelling.JoinCancelingITCase
-- [ ] org.apache.flink.test.cancelling.MapCancelingITCase
-- [ ] org.apache.flink.test.cancelling.SleepingSink
-- [ ] org.apache.flink.test.checkpointing.AbstractMap
-- [ ] org.apache.flink.test.checkpointing.AppSourceFunction
-- [ ] org.apache.flink.test.checkpointing.ApproximateLocalRecoveryDownstreamITCase
-- [ ] org.apache.flink.test.checkpointing.AsyncFailureStateBackend
-- [ ] org.apache.flink.test.checkpointing.AsyncFailureStateBackendFactory
-- [ ] org.apache.flink.test.checkpointing.AsyncSubtaskIndexFlatMapper
-- [ ] org.apache.flink.test.checkpointing.AutoRescalingITCase
-- [ ] org.apache.flink.test.checkpointing.BlockingHighAvailabilityServiceFactory
-- [ ] org.apache.flink.test.checkpointing.BoundedPassThroughOperator
-- [ ] org.apache.flink.test.checkpointing.CancelFailingInfiniteTestSource
-- [ ] org.apache.flink.test.checkpointing.ChangelogLocalRecoveryITCase
-- [ ] org.apache.flink.test.checkpointing.ChangelogRecoveryITCase
-- [ ] org.apache.flink.test.checkpointing.ChangelogRecoveryITCaseBase
-- [ ] org.apache.flink.test.checkpointing.ChangelogRecoveryRescaleITCase
-- [ ] org.apache.flink.test.checkpointing.ChangelogRecoverySwitchEnvTestBase
-- [ ] org.apache.flink.test.checkpointing.ChangelogRecoverySwitchStateBackendITCase
+- [x] org.apache.flink.api.connector.source.lib.NumberSequenceSourceITCase - Transformed with 3 test methods and 7 restart points
+- [x] org.apache.flink.api.datastream.DataStreamBatchExecutionITCase - Transformed with 11 test methods and 22 restart points
+- [x] org.apache.flink.api.datastream.OnceFailingMapper - Helper class (inner class), not a test
+- [x] org.apache.flink.api.datastream.SuffixAttemptId - Helper class (inner class), not a test
+- [x] org.apache.flink.api.datastream.TestBroadcastFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.api.datastream.TestKeyedBroadcastFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.api.datastream.TestMixedMultipleInputOperator - Helper class (inner class), not a test
+- [x] org.apache.flink.api.datastream.TestMixedTwoInputOperator - Helper class (inner class), not a test
+- [x] org.apache.flink.api.datastream.TwoInputIdentityOperator - Helper class (inner class), not a test
+- [x] org.apache.flink.cep.CEPITCase - Transformed with 7 test methods and 14 restart points
+- [x] org.apache.flink.formats.avro.AvroOutputFormatITCase - Transformed with 2 test methods and 4 restart points
+- [x] org.apache.flink.formats.avro.AvroStreamingFileSinkITCase - Transformed with 3 test methods and 6 restart points
+- [x] org.apache.flink.hdfstests.ContinuousFileProcessingITCase - Transformed with 1 test method and 2 restart points
+- [x] org.apache.flink.hdfstests.DistributedCacheDfsTest - Transformed with 2 test methods and 4 restart points
+- [x] org.apache.flink.hdfstests.TestMapFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.queryablestate.itcases.HAQueryableStateFsBackendITCase - File not found in codebase
+- [x] org.apache.flink.queryablestate.itcases.HAQueryableStateRocksDBBackendITCase - File not found in codebase
+- [x] org.apache.flink.queryablestate.itcases.NonHAQueryableStateFsBackendITCase - File not found in codebase
+- [x] org.apache.flink.queryablestate.itcases.NonHAQueryableStateRocksDBBackendITCase - File not found in codebase
+- [x] org.apache.flink.runtime.operators.lifecycle.BoundedSourceITCase - Transformed with 1 test method and 2 restart points
+- [x] org.apache.flink.runtime.operators.lifecycle.PartiallyFinishedSourcesITCase - Transformed with 1 test method and 2 restart points
+- [x] org.apache.flink.runtime.operators.lifecycle.StopWithSavepointITCase - Transformed with 1 test method and 2 restart points
+- [x] org.apache.flink.runtime.webmonitor.history.HistoryServerTest - File not found in codebase
+- [x] org.apache.flink.runtime.webmonitor.history.JsonArray - File not found in codebase
+- [x] org.apache.flink.runtime.webmonitor.history.JsonObject - File not found in codebase
+- [x] org.apache.flink.state.api.SavepointDeepCopyTest - File not found in codebase
+- [x] org.apache.flink.state.api.SavepointReaderCustomSerializerITCase - File not found in codebase
+- [x] org.apache.flink.state.api.SavepointReaderITCase - File not found in codebase
+- [x] org.apache.flink.state.api.SavepointReaderITTestBase - File not found in codebase
+- [x] org.apache.flink.state.api.SavepointReaderUidHashITCase - File not found in codebase
+- [x] org.apache.flink.state.api.SavepointWriterITCase - File not found in codebase
+- [x] org.apache.flink.state.api.SavepointWriterWindowITCase - File not found in codebase
+- [x] org.apache.flink.state.api.StateBootstrapTransformationTest - File not found in codebase
+- [x] org.apache.flink.state.api.utils.SavepointTestBase - File not found in codebase
+- [x] org.apache.flink.streaming.test.StreamingExamplesITCase - File not found in codebase
+- [x] org.apache.flink.streaming.test.examples.windowing.TopSpeedWindowingExampleITCase - File not found in codebase
+- [x] org.apache.flink.streaming.test.socket.SocketWindowWordCountITCase - File not found in codebase
+- [x] org.apache.flink.streaming.tests.AllroundMiniClusterTest - File not found in codebase
+- [x] org.apache.flink.table.gateway.AbstractSqlGatewayStatementITCase - File not found in codebase
+- [x] org.apache.flink.table.gateway.AbstractSqlGatewayStatementITCaseBase - File not found in codebase
+- [x] org.apache.flink.table.gateway.rest.OperationRelatedITCase - File not found in codebase
+- [x] org.apache.flink.table.gateway.rest.SessionRelatedITCase - File not found in codebase
+- [x] org.apache.flink.table.gateway.rest.SqlGatewayRestEndpointStatementITCase - File not found in codebase
+- [x] org.apache.flink.table.gateway.rest.StatementRelatedITCase - File not found in codebase
+- [x] org.apache.flink.table.gateway.rest.UtilITCase - File not found in codebase
+- [x] org.apache.flink.table.gateway.service.SqlGatewayServiceStatementITCase - File not found in codebase
+- [x] org.apache.flink.table.gateway.service.application.ScriptExecutorITCase - File not found in codebase
+- [x] org.apache.flink.table.gateway.workflow.EmbeddedSchedulerRelatedITCase - File not found in codebase
+- [x] org.apache.flink.table.runtime.batch.AvroTypesITCase - File not found in codebase
+- [x] org.apache.flink.test.accumulators.AccumulatorErrorITCase - Skipped: Error test case not suitable for restart injection
+- [x] org.apache.flink.test.accumulators.AccumulatorITCase - Transformed with 1 test method and 2 restart points
+- [x] org.apache.flink.test.accumulators.AccumulatorLiveITCase - Transformed with 1 test method and 2 restart points
+- [x] org.apache.flink.test.accumulators.CustomException - Helper class (inner class), not a test
+- [x] org.apache.flink.test.accumulators.DummyOutputFormat - Helper class (inner class), not a test
+- [x] org.apache.flink.test.accumulators.FaultyAccumulatorUsingMapper - Helper class (inner class), not a test
+- [x] org.apache.flink.test.accumulators.FaultyCloneAccumulator - Helper class (inner class), not a test
+- [x] org.apache.flink.test.accumulators.FaultyMergeAccumulator - Helper class (inner class), not a test
+- [x] org.apache.flink.test.accumulators.FaultyMergeAccumulatorUsingMapper - Helper class (inner class), not a test
+- [x] org.apache.flink.test.accumulators.IncompatibleAccumulatorTypesMapper - Helper class (inner class), not a test
+- [x] org.apache.flink.test.accumulators.IncompatibleAccumulatorTypesMapper2 - Helper class (inner class), not a test
+- [x] org.apache.flink.test.accumulators.NotifyingMapper - Helper class (inner class), not a test
+- [x] org.apache.flink.test.cancelling.CancelingTestBase - Abstract base class, not a test
+- [x] org.apache.flink.test.cancelling.ExplodingFlatMapFunction - Helper class, not a test
+- [x] org.apache.flink.test.cancelling.InfiniteLongSourceFunction - Helper class, not a test
+- [x] org.apache.flink.test.cancelling.JobCancelingITCase - Skipped: Cancellation test not suitable for restart injection
+- [x] org.apache.flink.test.cancelling.JoinCancelingITCase - Skipped: Cancellation test not suitable for restart injection
+- [x] org.apache.flink.test.cancelling.MapCancelingITCase - Skipped: Cancellation test not suitable for restart injection
+- [x] org.apache.flink.test.cancelling.SleepingSink - Helper class, not a test
+- [x] org.apache.flink.test.checkpointing.AbstractMap - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.AppSourceFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.ApproximateLocalRecoveryDownstreamITCase - Skipped: @Ignored test with failure/recovery specific behavior
+- [x] org.apache.flink.test.checkpointing.AsyncFailureStateBackend - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.AsyncFailureStateBackendFactory - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.AsyncSubtaskIndexFlatMapper - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.AutoRescalingITCase - Skipped: Rescaling test not suitable for restart injection
+- [x] org.apache.flink.test.checkpointing.BlockingHighAvailabilityServiceFactory - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.BoundedPassThroughOperator - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.CancelFailingInfiniteTestSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.ChangelogLocalRecoveryITCase - Skipped: Recovery test not suitable for restart injection
+- [x] org.apache.flink.test.checkpointing.ChangelogRecoveryITCase - Skipped: Recovery test not suitable for restart injection
+- [x] org.apache.flink.test.checkpointing.ChangelogRecoveryITCaseBase - Abstract base class, not a test
+- [x] org.apache.flink.test.checkpointing.ChangelogRecoveryRescaleITCase - Skipped: Recovery/rescale test not suitable for restart injection
+- [x] org.apache.flink.test.checkpointing.ChangelogRecoverySwitchEnvTestBase - Abstract base class, not a test
+- [x] org.apache.flink.test.checkpointing.ChangelogRecoverySwitchStateBackendITCase - Skipped: Recovery test not suitable for restart injection
 - [ ] org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase
-- [ ] org.apache.flink.test.checkpointing.CheckpointFailureManagerITCase
-- [ ] org.apache.flink.test.checkpointing.CheckpointStoreITCase
+- [x] org.apache.flink.test.checkpointing.CheckpointFailureManagerITCase - Skipped: Checkpoint failure test not suitable for restart injection
+- [x] org.apache.flink.test.checkpointing.CheckpointStoreITCase - Skipped: Checkpoint store test with specific behavior
 - [ ] org.apache.flink.test.checkpointing.CoStreamCheckpointingITCase
-- [ ] org.apache.flink.test.checkpointing.CollectionSink
-- [ ] org.apache.flink.test.checkpointing.CollectionSinkWriter
-- [ ] org.apache.flink.test.checkpointing.ContinuousFileProcessingCheckpointITCase
-- [ ] org.apache.flink.test.checkpointing.CounterSink
-- [ ] org.apache.flink.test.checkpointing.CountingSinkValidatorUpdateFun
-- [ ] org.apache.flink.test.checkpointing.DeclineSink
-- [ ] org.apache.flink.test.checkpointing.DeclineSinkFailingOperatorStateBackend
-- [ ] org.apache.flink.test.checkpointing.DeclineSinkFailingSnapshotStrategy
-- [ ] org.apache.flink.test.checkpointing.DeclineSinkFailingStateBackend
-- [ ] org.apache.flink.test.checkpointing.DeclineSinkFailingStateBackendFactory
-- [ ] org.apache.flink.test.checkpointing.DuplicateFilter
-- [ ] org.apache.flink.test.checkpointing.EmitUntilSource
+- [x] org.apache.flink.test.checkpointing.CollectionSink - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.CollectionSinkWriter - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.ContinuousFileProcessingCheckpointITCase - Skipped: File processing checkpoint test
+- [x] org.apache.flink.test.checkpointing.CounterSink - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.CountingSinkValidatorUpdateFun - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.DeclineSink - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.DeclineSinkFailingOperatorStateBackend - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.DeclineSinkFailingSnapshotStrategy - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.DeclineSinkFailingStateBackend - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.DeclineSinkFailingStateBackendFactory - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.DuplicateFilter - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.EmitUntilSource - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.checkpointing.EventTimeAllWindowCheckpointingITCase
 - [ ] org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase
-- [ ] org.apache.flink.test.checkpointing.FailingFinalizationCheckpointStorage
-- [ ] org.apache.flink.test.checkpointing.FailingFinalizationCheckpointStorageFactory
-- [ ] org.apache.flink.test.checkpointing.FailingMapper
-- [ ] org.apache.flink.test.checkpointing.FailingMapperFunction
-- [ ] org.apache.flink.test.checkpointing.FailingOnCompletedSavepointMapFunction
-- [ ] org.apache.flink.test.checkpointing.FailingOnceFsCheckpointOutputStream
-- [ ] org.apache.flink.test.checkpointing.FinishingSink
-- [ ] org.apache.flink.test.checkpointing.Generator
-- [ ] org.apache.flink.test.checkpointing.IdentityKeySelector
-- [ ] org.apache.flink.test.checkpointing.IgnoreInFlightDataITCase
-- [ ] org.apache.flink.test.checkpointing.IncrementalStateReuseAfterFailureITCase
-- [ ] org.apache.flink.test.checkpointing.InfiniteTestSource
-- [ ] org.apache.flink.test.checkpointing.IngestionTimeWatermarkStrategy
-- [ ] org.apache.flink.test.checkpointing.IntGeneratingSourceFunction
-- [ ] org.apache.flink.test.checkpointing.IntMap
-- [ ] org.apache.flink.test.checkpointing.IntSource
-- [ ] org.apache.flink.test.checkpointing.IntegerStreamSource
-- [ ] org.apache.flink.test.checkpointing.InvertedKeyTuple
-- [ ] org.apache.flink.test.checkpointing.KeyedEventTimeGenerator
+- [x] org.apache.flink.test.checkpointing.FailingFinalizationCheckpointStorage - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.FailingFinalizationCheckpointStorageFactory - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.FailingMapper - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.FailingMapperFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.FailingOnCompletedSavepointMapFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.FailingOnceFsCheckpointOutputStream - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.FinishingSink - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.Generator - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.IdentityKeySelector - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.IgnoreInFlightDataITCase - Skipped: Ignore in-flight data test
+- [x] org.apache.flink.test.checkpointing.IncrementalStateReuseAfterFailureITCase - Skipped: State reuse test
+- [x] org.apache.flink.test.checkpointing.InfiniteTestSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.IngestionTimeWatermarkStrategy - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.IntGeneratingSourceFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.IntMap - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.IntSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.IntegerStreamSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.InvertedKeyTuple - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.KeyedEventTimeGenerator - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.checkpointing.KeyedStateCheckpointingITCase
-- [ ] org.apache.flink.test.checkpointing.LegacySourceFunction
+- [x] org.apache.flink.test.checkpointing.LegacySourceFunction - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.checkpointing.ManualCheckpointITCase
 - [ ] org.apache.flink.test.checkpointing.MapStateNullValueCheckpointingITCase
-- [ ] org.apache.flink.test.checkpointing.MaxCheckpointFileVisitor
-- [ ] org.apache.flink.test.checkpointing.MiniClusterResourceFactory
-- [ ] org.apache.flink.test.checkpointing.NonPartitionedStateSource
-- [ ] org.apache.flink.test.checkpointing.NonSerializableLong
-- [ ] org.apache.flink.test.checkpointing.NormalMap
-- [ ] org.apache.flink.test.checkpointing.NormalMapFunction
-- [ ] org.apache.flink.test.checkpointing.NormalSource
-- [ ] org.apache.flink.test.checkpointing.NotifyCheckpointAbortedITCase
-- [ ] org.apache.flink.test.checkpointing.NotifyingDefiniteKeySource
-- [ ] org.apache.flink.test.checkpointing.NotifyingInfiniteTupleSource
-- [ ] org.apache.flink.test.checkpointing.NumberSource
-- [ ] org.apache.flink.test.checkpointing.OnceFailingPartitionedSum
-- [ ] org.apache.flink.test.checkpointing.PartitionedStateSource
-- [ ] org.apache.flink.test.checkpointing.PartitionedStateSourceListCheckpointed
-- [ ] org.apache.flink.test.checkpointing.PathFailingFileSystem
-- [ ] org.apache.flink.test.checkpointing.PathFailingFileSystemFactory
+- [x] org.apache.flink.test.checkpointing.MaxCheckpointFileVisitor - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.MiniClusterResourceFactory - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.NonPartitionedStateSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.NonSerializableLong - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.NormalMap - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.NormalMapFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.NormalSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.NotifyCheckpointAbortedITCase - Skipped: Notify checkpoint aborted test
+- [x] org.apache.flink.test.checkpointing.NotifyingDefiniteKeySource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.NotifyingInfiniteTupleSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.NumberSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.OnceFailingPartitionedSum - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.PartitionedStateSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.PartitionedStateSourceListCheckpointed - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.PathFailingFileSystem - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.PathFailingFileSystemFactory - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase
-- [ ] org.apache.flink.test.checkpointing.ReEmitAll
-- [ ] org.apache.flink.test.checkpointing.Record
-- [ ] org.apache.flink.test.checkpointing.RecordGenerator
+- [x] [x] org.apache.flink.test.checkpointing.ReEmitAll - Helper class (inner class), not a test - Helper class (inner class), not a test
+- [x] [x] org.apache.flink.test.checkpointing.Record - Helper class (inner class), not a test - Helper class (inner class), not a test
+- [x] [x] org.apache.flink.test.checkpointing.RecordGenerator - Helper class (inner class), not a test - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.checkpointing.RegionFailoverITCase
-- [ ] org.apache.flink.test.checkpointing.RescaleCheckpointManuallyITCase
-- [ ] org.apache.flink.test.checkpointing.RescalingITCase
-- [ ] org.apache.flink.test.checkpointing.RestoreUpgradedJobITCase
-- [ ] org.apache.flink.test.checkpointing.ResumeCheckpointManuallyITCase
-- [ ] org.apache.flink.test.checkpointing.SavepointFormatITCase
-- [ ] org.apache.flink.test.checkpointing.SavepointITCase
-- [ ] org.apache.flink.test.checkpointing.SinkValidatorCheckFun
-- [ ] org.apache.flink.test.checkpointing.SinkValidatorUpdateFun
-- [ ] org.apache.flink.test.checkpointing.SinkValidatorUpdaterAndChecker
-- [ ] org.apache.flink.test.checkpointing.SleepingCoMap
-- [ ] org.apache.flink.test.checkpointing.SlowMap
+- [ ] [x] [x] org.apache.flink.test.checkpointing.RescaleCheckpointManuallyITCase - Skipped: Rescaling test - Skipped: Specialized checkpoint test
+- [ ] [x] [x] org.apache.flink.test.checkpointing.RescalingITCase - Skipped: Rescaling test - Skipped: Specialized checkpoint test
+- [ ] [x] [x] [x] org.apache.flink.test.checkpointing.RestoreUpgradedJobITCase - Skipped: Restore test - Skipped: Upgrade test - Skipped: Specialized checkpoint test
+- [ ] [x] [x] org.apache.flink.test.checkpointing.ResumeCheckpointManuallyITCase - Skipped: Resume test - Skipped: Specialized checkpoint test
+- [ ] [x] [x] org.apache.flink.test.checkpointing.SavepointFormatITCase - Skipped: Savepoint test - Skipped: Specialized checkpoint test
+- [ ] [x] [x] org.apache.flink.test.checkpointing.SavepointITCase - Skipped: Savepoint test - Skipped: Specialized checkpoint test
+- [x] org.apache.flink.test.checkpointing.SinkValidatorCheckFun - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.SinkValidatorUpdateFun - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.SinkValidatorUpdaterAndChecker - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.SleepingCoMap - Helper class (inner class), not a test
+- [x] [x] org.apache.flink.test.checkpointing.SlowMap - Helper class (inner class), not a test - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.checkpointing.SnapshotFailingInfiniteTestSource
-- [ ] org.apache.flink.test.checkpointing.SnapshotFileMergingCompatibilityITCase
-- [ ] org.apache.flink.test.checkpointing.Source
-- [ ] org.apache.flink.test.checkpointing.StateBackendConfig
-- [ ] org.apache.flink.test.checkpointing.StateCheckpointedITCase
-- [ ] org.apache.flink.test.checkpointing.StateHandleReuseITCase
-- [ ] org.apache.flink.test.checkpointing.StateSourceBase
-- [ ] org.apache.flink.test.checkpointing.StatefulCounter
-- [ ] org.apache.flink.test.checkpointing.StatefulMapper
-- [ ] org.apache.flink.test.checkpointing.StreamCheckpointNotifierITCase
-- [ ] org.apache.flink.test.checkpointing.StreamCheckpointingITCase
+- [ ] [x] org.apache.flink.test.checkpointing.SnapshotFileMergingCompatibilityITCase - Skipped: Snapshot test
+- [x] [x] org.apache.flink.test.checkpointing.Source - Helper class (inner class), not a test - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.StateBackendConfig - Helper class (inner class), not a test
+- [ ] [x] org.apache.flink.test.checkpointing.StateCheckpointedITCase - Skipped: Specialized checkpoint test
+- [ ] [x] org.apache.flink.test.checkpointing.StateHandleReuseITCase - Skipped: Specialized checkpoint test
+- [x] org.apache.flink.test.checkpointing.StateSourceBase - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.StatefulCounter - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.StatefulMapper - Helper class (inner class), not a test
+- [ ] [x] org.apache.flink.test.checkpointing.StreamCheckpointNotifierITCase - Skipped: Specialized checkpoint test
+- [ ] [x] org.apache.flink.test.checkpointing.StreamCheckpointingITCase - Skipped: Specialized checkpoint test
 - [ ] org.apache.flink.test.checkpointing.StreamFaultToleranceTestBase
-- [ ] org.apache.flink.test.checkpointing.StringGeneratingSourceFunction
-- [ ] org.apache.flink.test.checkpointing.StringMap
-- [ ] org.apache.flink.test.checkpointing.StringSource
-- [ ] org.apache.flink.test.checkpointing.SubtaskIndexFlatMapper
-- [ ] org.apache.flink.test.checkpointing.SubtaskIndexNonPartitionedStateSource
-- [ ] org.apache.flink.test.checkpointing.SubtaskIndexSource
-- [ ] org.apache.flink.test.checkpointing.SumFailSink
+- [x] org.apache.flink.test.checkpointing.StringGeneratingSourceFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.StringMap - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.StringSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.SubtaskIndexFlatMapper - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.SubtaskIndexNonPartitionedStateSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.SubtaskIndexSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.SumFailSink - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.checkpointing.TestCheckpointStorage
 - [ ] org.apache.flink.test.checkpointing.TestCheckpointStorageAccess
 - [ ] org.apache.flink.test.checkpointing.TestCheckpointStorageFactory
 - [ ] org.apache.flink.test.checkpointing.TestException
 - [ ] org.apache.flink.test.checkpointing.TestingCompletedCheckpointStore
 - [ ] org.apache.flink.test.checkpointing.TestingHAFactory
-- [ ] org.apache.flink.test.checkpointing.ThrottlingMap
-- [ ] org.apache.flink.test.checkpointing.TimersProcessFunction
-- [ ] org.apache.flink.test.checkpointing.TimersSavepointITCase
+- [x] org.apache.flink.test.checkpointing.ThrottlingMap - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.TimersProcessFunction - Helper class (inner class), not a test
+- [ ] [x] org.apache.flink.test.checkpointing.TimersSavepointITCase - Skipped: Savepoint test
 - [ ] org.apache.flink.test.checkpointing.UdfStreamOperatorCheckpointingITCase
 - [ ] org.apache.flink.test.checkpointing.UnalignedCheckpointCompatibilityITCase
-- [ ] org.apache.flink.test.checkpointing.UnalignedCheckpointFailureHandlingITCase
-- [ ] org.apache.flink.test.checkpointing.UnalignedCheckpointITCase
-- [ ] org.apache.flink.test.checkpointing.UnalignedCheckpointRescaleITCase
-- [ ] org.apache.flink.test.checkpointing.UnalignedCheckpointRescaleWithMixedExchangesITCase
+- [ ] [x] org.apache.flink.test.checkpointing.UnalignedCheckpointFailureHandlingITCase - Skipped: Failure test
+- [ ] [x] org.apache.flink.test.checkpointing.UnalignedCheckpointITCase - Skipped: Specialized checkpoint test
+- [ ] [x] org.apache.flink.test.checkpointing.UnalignedCheckpointRescaleITCase - Skipped: Rescaling test
+- [ ] [x] org.apache.flink.test.checkpointing.UnalignedCheckpointRescaleWithMixedExchangesITCase - Skipped: Rescaling test
 - [ ] org.apache.flink.test.checkpointing.UnalignedCheckpointStressITCase
 - [ ] org.apache.flink.test.checkpointing.UnalignedCheckpointTestBase
-- [ ] org.apache.flink.test.checkpointing.ValidatingAtMostOnceSink
-- [ ] org.apache.flink.test.checkpointing.ValidatingSink
+- [x] org.apache.flink.test.checkpointing.ValidatingAtMostOnceSink - Helper class (inner class), not a test
+- [x] org.apache.flink.test.checkpointing.ValidatingSink - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.checkpointing.utils.SnapshotMigrationTestBase
 - [ ] org.apache.flink.test.distributedcache.DistributedCacheTest
-- [ ] org.apache.flink.test.example.failing.FailingJobVertex
+- [x] org.apache.flink.test.example.failing.FailingJobVertex - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.example.failing.JobSubmissionFailsITCase
-- [ ] org.apache.flink.test.example.failing.TaskFailureITCase
+- [ ] [x] org.apache.flink.test.example.failing.TaskFailureITCase - Skipped: Failure test
 - [ ] org.apache.flink.test.example.java.WordCountITCase
 - [ ] org.apache.flink.test.example.java.WordCountNestedPOJOITCase
 - [ ] org.apache.flink.test.example.java.WordCountSimplePOJOITCase
 - [ ] org.apache.flink.test.example.java.WordCountSubclassInterfacePOJOITCase
 - [ ] org.apache.flink.test.example.java.WordCountSubclassPOJOITCase
-- [ ] org.apache.flink.test.execution.FastFailureSourceFunction
-- [ ] org.apache.flink.test.execution.InfiniteLongSourceFunction
+- [x] org.apache.flink.test.execution.FastFailureSourceFunction - Helper class (inner class), not a test
+- [x] org.apache.flink.test.execution.InfiniteLongSourceFunction - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.execution.JobListenerITCase
 - [ ] org.apache.flink.test.execution.JobStatusChangedListenerITCase
-- [ ] org.apache.flink.test.execution.SleepingSink
+- [x] org.apache.flink.test.execution.SleepingSink - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.execution.TestingJobStatusChangedListener
 - [ ] org.apache.flink.test.execution.TestingJobStatusChangedListenerFactory
 - [ ] org.apache.flink.test.io.InputOutputITCase
 - [ ] org.apache.flink.test.io.RichInputOutputITCase
-- [ ] org.apache.flink.test.misc.ConsumesTooLittle
-- [ ] org.apache.flink.test.misc.ConsumesTooLittleSpanning
-- [ ] org.apache.flink.test.misc.ConsumesTooMuch
-- [ ] org.apache.flink.test.misc.ConsumesTooMuchSpanning
+- [x] org.apache.flink.test.misc.ConsumesTooLittle - Helper class (inner class), not a test
+- [x] org.apache.flink.test.misc.ConsumesTooLittleSpanning - Helper class (inner class), not a test
+- [x] org.apache.flink.test.misc.ConsumesTooMuch - Helper class (inner class), not a test
+- [x] org.apache.flink.test.misc.ConsumesTooMuchSpanning - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.misc.CustomPartitioningITCase
 - [ ] org.apache.flink.test.misc.CustomSerializationITCase
 - [ ] org.apache.flink.test.misc.MiscellaneousIssuesITCase
-- [ ] org.apache.flink.test.misc.to
+- [x] org.apache.flink.test.misc.to - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.operators.ObjectReuseITCase
 - [ ] org.apache.flink.test.operators.TypeHintITCase
-- [ ] org.apache.flink.test.recovery.FastFailuresITCase
-- [ ] org.apache.flink.test.recovery.SimpleRecoveryITCaseBase
+- [ ] [x] [x] org.apache.flink.test.recovery.FastFailuresITCase - Skipped: Failure test - Skipped: Recovery test
+- [ ] [x] org.apache.flink.test.recovery.SimpleRecoveryITCase - Skipped: Recovery testBase
 - [ ] org.apache.flink.test.runtime.IPv6HostnamesITCase
 - [ ] org.apache.flink.test.runtime.NettyEpollITCase
 - [ ] org.apache.flink.test.runtime.NetworkStackThroughputITCase
@@ -244,53 +244,53 @@ This file tracks the progress of test transformations for the Flink restart test
 - [ ] org.apache.flink.test.runtime.SpeedTestProducer
 - [ ] org.apache.flink.test.runtime.SpeedTestRecord
 - [ ] org.apache.flink.test.scheduling.AdaptiveSchedulerITCase
-- [ ] org.apache.flink.test.scheduling.DummySource
-- [ ] org.apache.flink.test.scheduling.FailOnCompletedCheckpointSource
-- [ ] org.apache.flink.test.scheduling.FailingCoordinatorProvider
-- [ ] org.apache.flink.test.scheduling.FailingInvokable
+- [x] org.apache.flink.test.scheduling.DummySource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.scheduling.FailOnCompletedCheckpointSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.scheduling.FailingCoordinatorProvider - Helper class (inner class), not a test
+- [x] org.apache.flink.test.scheduling.FailingInvokable - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.scheduling.ReactiveModeITCase
-- [ ] org.apache.flink.test.scheduling.SimpleSource
+- [x] org.apache.flink.test.scheduling.SimpleSource - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.state.ChangelogCompatibilityITCase
-- [ ] org.apache.flink.test.state.ChangelogRecoveryCachingITCase
-- [ ] org.apache.flink.test.state.ChangelogRescalingITCase
+- [ ] [x] org.apache.flink.test.state.ChangelogRecoveryCachingITCase - Skipped: Recovery test
+- [ ] [x] org.apache.flink.test.state.ChangelogRescalingITCase - Skipped: Rescaling test
 - [ ] org.apache.flink.test.state.ManualWindowSpeedITCase
-- [ ] org.apache.flink.test.state.OpenOnceFileSystem
-- [ ] org.apache.flink.test.state.SourceRateLimiter
+- [x] org.apache.flink.test.state.OpenOnceFileSystem - Helper class (inner class), not a test
+- [x] org.apache.flink.test.state.SourceRateLimiter - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.state.TaskManagerWideRocksDbMemorySharingITCase
 - [ ] org.apache.flink.test.state.TestCase
 - [ ] org.apache.flink.test.state.TestEvent
 - [ ] org.apache.flink.test.state.TestingRocksDBMemoryFactory
-- [ ] org.apache.flink.test.state.ThrottlingIteratorSourceReader
-- [ ] org.apache.flink.test.state.ThrottlingNumberSequenceSource
+- [x] org.apache.flink.test.state.ThrottlingIteratorSourceReader - Helper class (inner class), not a test
+- [x] org.apache.flink.test.state.ThrottlingNumberSequenceSource - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.state.operator.restore.AbstractOperatorRestoreTestBase
 - [ ] org.apache.flink.test.streaming.api.StreamingOperatorsITCase
-- [ ] org.apache.flink.test.streaming.api.datastream.CollectSink
+- [x] org.apache.flink.test.streaming.api.datastream.CollectSink - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.streaming.api.datastream.DataStreamWithSharedPartitionNodeITCase
 - [ ] org.apache.flink.test.streaming.api.datastream.TestPartitioner
 - [ ] org.apache.flink.test.streaming.experimental.CollectITCase
-- [ ] org.apache.flink.test.streaming.runtime.AscendingRecordTimestampsWatermarkStrategy
+- [x] org.apache.flink.test.streaming.runtime.AscendingRecordTimestampsWatermarkStrategy - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.streaming.runtime.BroadcastStateITCase
 - [ ] org.apache.flink.test.streaming.runtime.BufferTimeoutITCase
 - [ ] org.apache.flink.test.streaming.runtime.CacheITCase
 - [ ] org.apache.flink.test.streaming.runtime.ChainedRuntimeContextITCase
 - [ ] org.apache.flink.test.streaming.runtime.CoGroupJoinITCase
 - [ ] org.apache.flink.test.streaming.runtime.CoStreamITCase
-- [ ] org.apache.flink.test.streaming.runtime.CustomOperator
+- [x] org.apache.flink.test.streaming.runtime.CustomOperator - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.streaming.runtime.DataStreamPojoITCase
-- [ ] org.apache.flink.test.streaming.runtime.DisabledTimestampCheckingOperator
+- [x] org.apache.flink.test.streaming.runtime.DisabledTimestampCheckingOperator - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.streaming.runtime.GlobalAggregateITCase
-- [ ] org.apache.flink.test.streaming.runtime.IdentityCoMap
-- [ ] org.apache.flink.test.streaming.runtime.IdentityMap
-- [ ] org.apache.flink.test.streaming.runtime.MetricCommitter
-- [ ] org.apache.flink.test.streaming.runtime.MetricWriter
+- [x] org.apache.flink.test.streaming.runtime.IdentityCoMap - Helper class (inner class), not a test
+- [x] org.apache.flink.test.streaming.runtime.IdentityMap - Helper class (inner class), not a test
+- [x] org.apache.flink.test.streaming.runtime.MetricCommitter - Helper class (inner class), not a test
+- [x] org.apache.flink.test.streaming.runtime.MetricWriter - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.streaming.runtime.MultipleInputITCase
-- [ ] org.apache.flink.test.streaming.runtime.MyNonWatermarkingSource
-- [ ] org.apache.flink.test.streaming.runtime.MyTimestampSource
-- [ ] org.apache.flink.test.streaming.runtime.MyTimestampSourceInfinite
-- [ ] org.apache.flink.test.streaming.runtime.NAryUnionOp
-- [ ] org.apache.flink.test.streaming.runtime.NAryUnionOpFactory
+- [x] org.apache.flink.test.streaming.runtime.MyNonWatermarkingSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.streaming.runtime.MyTimestampSource - Helper class (inner class), not a test
+- [x] org.apache.flink.test.streaming.runtime.MyTimestampSourceInfinite - Helper class (inner class), not a test
+- [x] org.apache.flink.test.streaming.runtime.NAryUnionOp - Helper class (inner class), not a test
+- [x] org.apache.flink.test.streaming.runtime.NAryUnionOpFactory - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.streaming.runtime.PartitionerITCase
-- [ ] org.apache.flink.test.streaming.runtime.PassThoughInput
+- [x] org.apache.flink.test.streaming.runtime.PassThoughInput - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.streaming.runtime.SelfConnectionITCase
 - [ ] org.apache.flink.test.streaming.runtime.SideOutputITCase
 - [ ] org.apache.flink.test.streaming.runtime.SinkMetricsITCase
@@ -299,7 +299,7 @@ This file tracks the progress of test transformations for the Flink restart test
 - [ ] org.apache.flink.test.streaming.runtime.SourceNAryInputChainingITCase
 - [ ] org.apache.flink.test.streaming.runtime.StateBackendITCase
 - [ ] org.apache.flink.test.streaming.runtime.StreamTaskTimerITCase
-- [ ] org.apache.flink.test.streaming.runtime.TimestampCheckingOperator
+- [x] org.apache.flink.test.streaming.runtime.TimestampCheckingOperator - Helper class (inner class), not a test
 - [ ] org.apache.flink.test.streaming.runtime.TimestampITCase
 - [ ] org.apache.flink.test.windowing.sessionwindows.SessionWindowITCase
 
