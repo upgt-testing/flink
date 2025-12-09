@@ -6,13 +6,24 @@
       "restartPoints": [
         {
           "position": "after_job_submit",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_source_ingestion",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -22,18 +33,36 @@
       "restartPoints": [
         {
           "position": "after_job_submit",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "after_checkpoint",
-          "targets": ["taskmanager", "jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_job_running",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -43,13 +72,24 @@
       "restartPoints": [
         {
           "position": "after_job_submit",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_task_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -59,13 +99,24 @@
       "restartPoints": [
         {
           "position": "before_batch_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_batch_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -75,13 +126,24 @@
       "restartPoints": [
         {
           "position": "before_batch_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_batch_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -91,13 +153,24 @@
       "restartPoints": [
         {
           "position": "before_batch_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_batch_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -107,13 +180,24 @@
       "restartPoints": [
         {
           "position": "before_batch_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_reduce_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -123,13 +207,24 @@
       "restartPoints": [
         {
           "position": "before_batch_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_sum_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -139,13 +234,24 @@
       "restartPoints": [
         {
           "position": "before_two_input_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_two_input_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -155,13 +261,24 @@
       "restartPoints": [
         {
           "position": "before_two_input_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_two_input_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -171,13 +288,24 @@
       "restartPoints": [
         {
           "position": "before_broadcast_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_broadcast_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -187,13 +315,24 @@
       "restartPoints": [
         {
           "position": "before_broadcast_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_broadcast_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -203,13 +342,24 @@
       "restartPoints": [
         {
           "position": "before_mixed_two_input_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_mixed_two_input_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -219,13 +369,24 @@
       "restartPoints": [
         {
           "position": "before_multi_input_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_multi_input_execution",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -235,13 +396,24 @@
       "restartPoints": [
         {
           "position": "before_bounded_source_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_bounded_source_execute",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -251,13 +423,24 @@
       "restartPoints": [
         {
           "position": "before_partially_finished_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_partially_finished_execute",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -267,13 +450,24 @@
       "restartPoints": [
         {
           "position": "before_stop_with_savepoint_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_stop_with_savepoint_execute",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -283,13 +477,24 @@
       "restartPoints": [
         {
           "position": "before_accumulator_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_accumulator_execute",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
         }
       ]
     },
@@ -299,13 +504,3426 @@
       "restartPoints": [
         {
           "position": "before_accumulator_live_execute",
-          "targets": ["jobmanager"],
-          "modes": ["GRACEFUL", "CRASH", "DELAYED_CRASH"]
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         },
         {
           "position": "during_accumulator_live_execute",
-          "targets": ["taskmanager"],
-          "modes": ["GRACEFUL", "CRASH"]
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected",
+      "testMethod": "testImmediateCheckpointing",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected",
+      "testMethod": "testRestoreAfterSomeTasksFinished",
+      "restartPoints": [
+        {
+          "position": "after_first_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_first_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        },
+        {
+          "position": "after_savepoint",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_restore_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected",
+      "testMethod": "testFailoverAfterSomeTasksFinished",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.CoStreamCheckpointingITCase_RestartInjected",
+      "testMethod": "testCoStreamCheckpointingProgram",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_comap_execution",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeAllWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testTumblingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeAllWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testSlidingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeAllWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testPreAggregatedTumblingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeAllWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testPreAggregatedSlidingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testTumblingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testTumblingTimeWindowWithKVStateMinMaxParallelism",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testTumblingTimeWindowWithKVStateMaxMaxParallelism",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testSlidingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testPreAggregatedTumblingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testPreAggregatedSlidingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.KeyedStateCheckpointingITCase_RestartInjected",
+      "testMethod": "testWithMemoryBackendAsync",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.KeyedStateCheckpointingITCase_RestartInjected",
+      "testMethod": "testWithFsBackendAsync",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.KeyedStateCheckpointingITCase_RestartInjected",
+      "testMethod": "testWithRocksDbBackendFull",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.KeyedStateCheckpointingITCase_RestartInjected",
+      "testMethod": "testWithRocksDbBackendIncremental",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.KeyedStateCheckpointingITCase_RestartInjected",
+      "testMethod": "testWithForStBackendIncremental",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.ManualCheckpointITCase_RestartInjected",
+      "testMethod": "testTriggeringWhenPeriodicDisabled",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.ManualCheckpointITCase_RestartInjected",
+      "testMethod": "testTriggeringWhenPeriodicEnabled",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.MapStateNullValueCheckpointingITCase_RestartInjected",
+      "testMethod": "testMapStateWithNullValueCheckpointingAndRestore",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testTumblingProcessingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testSlidingProcessingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testAggregatingTumblingProcessingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase_RestartInjected",
+      "testMethod": "testAggregatingSlidingProcessingTimeWindow",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.RegionFailoverITCase_RestartInjected",
+      "testMethod": "testMultiRegionFailover",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.checkpointing.UdfStreamOperatorCheckpointingITCase_RestartInjected",
+      "testMethod": "runCheckpointedProgram",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "after_checkpoint",
+          "targets": [
+            "taskmanager",
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit_no_reuse",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running_no_reuse",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountNestedPOJOITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountNestedPOJOITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountSimplePOJOITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountSimplePOJOITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountSubclassInterfacePOJOITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountSubclassInterfacePOJOITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountSubclassPOJOITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.example.java.WordCountSubclassPOJOITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobListenerITCase_RestartInjected",
+      "testMethod": "testExecuteCallsJobListenerOnBatchEnvironment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobListenerITCase_RestartInjected",
+      "testMethod": "testExecuteAsyncCallsJobListenerOnBatchEnvironment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobListenerITCase_RestartInjected",
+      "testMethod": "testExecuteCallsJobListenerOnMainThreadOnBatchEnvironment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobListenerITCase_RestartInjected",
+      "testMethod": "testExecuteAsyncCallsJobListenerOnMainThreadOnBatchEnvironment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobListenerITCase_RestartInjected",
+      "testMethod": "testExecuteCallsJobListenerOnStreamingEnvironment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobListenerITCase_RestartInjected",
+      "testMethod": "testExecuteAsyncCallsJobListenerOnStreamingEnvironment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobListenerITCase_RestartInjected",
+      "testMethod": "testExecuteCallsJobListenerOnMainThreadOnStreamEnvironment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobListenerITCase_RestartInjected",
+      "testMethod": "testExecuteAsyncCallsJobListenerOnMainThreadOnStreamEnvironment",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobStatusChangedListenerITCase_RestartInjected",
+      "testMethod": "testJobStatusChangedForSucceededApplication",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobStatusChangedListenerITCase_RestartInjected",
+      "testMethod": "testJobStatusChangedForFailedApplication",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.execution.JobStatusChangedListenerITCase_RestartInjected",
+      "testMethod": "testJobStatusChangedForCancelledApplication",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.io.InputOutputITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.io.InputOutputITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.io.RichInputOutputITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.io.RichInputOutputITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.misc.CustomPartitioningITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.misc.CustomPartitioningITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.misc.CustomSerializationITCase_RestartInjected",
+      "testMethod": "testIncorrectSerializer1",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.misc.CustomSerializationITCase_RestartInjected",
+      "testMethod": "testIncorrectSerializer2",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.misc.CustomSerializationITCase_RestartInjected",
+      "testMethod": "testIncorrectSerializer3",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.misc.CustomSerializationITCase_RestartInjected",
+      "testMethod": "testIncorrectSerializer4",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.misc.MiscellaneousIssuesITCase_RestartInjected",
+      "testMethod": "testDisjointDataflows",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.misc.MiscellaneousIssuesITCase_RestartInjected",
+      "testMethod": "testAccumulatorsAfterNoOp",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.runtime.NettyEpollITCase_RestartInjected",
+      "testMethod": "testNettyEpoll",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.runtime.SelfJoinDeadlockITCase_RestartInjected",
+      "testMethod": "testJobWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.runtime.SelfJoinDeadlockITCase_RestartInjected",
+      "testMethod": "testJobWithoutObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.api.StreamingOperatorsITCase_RestartInjected",
+      "testMethod": "testAsyncWaitOperator",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_async_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.api.StreamingOperatorsITCase_RestartInjected",
+      "testMethod": "testOperatorChainWithObjectReuseAndNoOutputOperators",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_operator_chain",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.api.datastream.DataStreamWithSharedPartitionNodeITCase_RestartInjected",
+      "testMethod": "testJobWithSharePartitionNode",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_custom_partitioning",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.BroadcastStateITCase_RestartInjected",
+      "testMethod": "testKeyedWithBroadcastTranslation",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_broadcast_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.BroadcastStateITCase_RestartInjected",
+      "testMethod": "testBroadcastTranslation",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_broadcast_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.BufferTimeoutITCase_RestartInjected",
+      "testMethod": "testDisablingBufferTimeout",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_buffer_timeout_test",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected",
+      "testMethod": "testCacheProduceAndConsume",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_cache_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected",
+      "testMethod": "testInvalidateCache",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_cache_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected",
+      "testMethod": "testBatchProduceCacheStreamConsume",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_cache_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected",
+      "testMethod": "testCacheProduceAndConsumeWithDifferentPartitioner",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_cache_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected",
+      "testMethod": "testCacheSideOutput",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_cache_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected",
+      "testMethod": "testRetryOnCorruptedClusterDataset",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_cache_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.ChainedRuntimeContextITCase_RestartInjected",
+      "testMethod": "test",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CoGroupJoinITCase_RestartInjected",
+      "testMethod": "testCoGroup",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CoGroupJoinITCase_RestartInjected",
+      "testMethod": "testJoin",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CoGroupJoinITCase_RestartInjected",
+      "testMethod": "testSelfJoin",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_window_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.CoStreamITCase_RestartInjected",
+      "testMethod": "test",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_costream_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.DataStreamPojoITCase_RestartInjected",
+      "testMethod": "testCompositeKeyOnNestedPojo",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.DataStreamPojoITCase_RestartInjected",
+      "testMethod": "testNestedKeyOnNestedPojo",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.DataStreamPojoITCase_RestartInjected",
+      "testMethod": "testNestedPojoFieldAccessor",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.GlobalAggregateITCase_RestartInjected",
+      "testMethod": "testSuccessfulUpdateToGlobalAggregate",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_global_aggregate",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.GlobalAggregateITCase_RestartInjected",
+      "testMethod": "testExceptionThrowingAggregateFunction",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_global_aggregate",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.MultipleInputITCase_RestartInjected",
+      "testMethod": "testBasicProcessing",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_multiple_input_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.MultipleInputITCase_RestartInjected",
+      "testMethod": "testUnion",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_multiple_input_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.MultipleInputITCase_RestartInjected",
+      "testMethod": "testKeyedState",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_keyed_state_processing",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.PartitionerITCase_RestartInjected",
+      "testMethod": "partitionerTest",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SelfConnectionITCase_RestartInjected",
+      "testMethod": "differentDataStreamSameChain",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SelfConnectionITCase_RestartInjected",
+      "testMethod": "differentDataStreamDifferentChain",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testWatermarkForwarding",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testSideOutputWithMultipleConsumers",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testSideOutputWithMultipleConsumersWithObjectReuse",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testDifferentSideOutputTypes",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testProcessFunctionSideOutput",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testCoProcessFunctionSideOutput",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testCoProcessFunctionSideOutputWithMultipleConsumers",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testKeyedProcessFunctionSideOutput",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testLegacyKeyedCoProcessFunctionSideOutput",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testKeyedCoProcessFunctionSideOutput",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testLegacyKeyedCoProcessFunctionSideOutputWithMultipleConsumers",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testKeyedCoProcessFunctionSideOutputWithMultipleConsumers",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testProcessFunctionSideOutputWithWrongTag",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testAllWindowLateArrivingEvents",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testKeyedWindowLateArrivingEvents",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testProcessdWindowFunctionSideOutput",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testProcessAllWindowFunctionSideOutput",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected",
+      "testMethod": "testUnionOfTwoSideOutputs",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SinkMetricsITCase_RestartInjected",
+      "testMethod": "testMetrics",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_job_running",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SinkV2MetricsITCase_RestartInjected",
+      "testMethod": "testMetrics",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_sink_metrics_check",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.SinkV2MetricsITCase_RestartInjected",
+      "testMethod": "testCommitterMetrics",
+      "restartPoints": [
+        {
+          "position": "after_committer_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_committer_execution",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.TimestampITCase_RestartInjected",
+      "testMethod": "testWatermarkPropagation",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        },
+        {
+          "position": "during_watermark_propagation",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.TimestampITCase_RestartInjected",
+      "testMethod": "testSelfUnionWatermarkPropagation",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.TimestampITCase_RestartInjected",
+      "testMethod": "testTimestampHandling",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.TimestampITCase_RestartInjected",
+      "testMethod": "testDisabledTimestamps",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.TimestampITCase_RestartInjected",
+      "testMethod": "testTimestampExtractorWithAutoInterval",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.TimestampITCase_RestartInjected",
+      "testMethod": "testTimestampExtractorWithCustomWatermarkEmit",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.test.streaming.runtime.TimestampITCase_RestartInjected",
+      "testMethod": "testTimestampExtractorWithLateWatermarkEmit",
+      "restartPoints": [
+        {
+          "position": "after_job_submit",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL",
+            "CRASH",
+            "DELAYED_CRASH"
+          ]
         }
       ]
     }
