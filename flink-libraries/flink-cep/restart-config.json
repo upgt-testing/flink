@@ -1,0 +1,212 @@
+{
+  "tests": [
+    {
+      "testClass": "org.apache.flink.cep.CEPITCase_RestartInjected",
+      "testMethod": "testSimplePatternCEP",
+      "restartPoints": [
+        {
+          "position": "before_cep_execute",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        },
+        {
+          "position": "after_cep_pattern_match",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.cep.CEPITCase_RestartInjected",
+      "testMethod": "testProcessingTimeWithinBetweenFirstAndLast",
+      "restartPoints": [
+        {
+          "position": "before_window_execute",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        },
+        {
+          "position": "after_window_pattern",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.cep.CEPITCase_RestartInjected",
+      "testMethod": "testSimpleOrFilterPatternCEP",
+      "restartPoints": [
+        {
+          "position": "before_or_filter_execute",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        },
+        {
+          "position": "after_or_filter_pattern",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.cep.CEPITCase_RestartInjected",
+      "testMethod": "testSimpleKeyedPatternEventTime",
+      "restartPoints": [
+        {
+          "position": "before_keyed_event_time_execute",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        },
+        {
+          "position": "after_keyed_event_time_pattern",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.cep.CEPITCase_RestartInjected",
+      "testMethod": "testSimplePatternEventTime",
+      "restartPoints": [
+        {
+          "position": "before_event_time_execute",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        },
+        {
+          "position": "after_event_time_pattern",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.cep.CEPITCase_RestartInjected",
+      "testMethod": "testProcessingTimeWithinPreviousAndCurrent",
+      "restartPoints": [
+        {
+          "position": "before_window_execute",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        },
+        {
+          "position": "after_window_pattern",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.cep.CEPITCase_RestartInjected",
+      "testMethod": "testSimpleKeyedPatternCEP",
+      "restartPoints": [
+        {
+          "position": "before_keyed_cep_execute",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        },
+        {
+          "position": "after_keyed_pattern_match",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        }
+      ]
+    },
+    {
+      "testClass": "org.apache.flink.cep.CEPITCase_RestartInjected",
+      "testMethod": "testSimplePatternWithSingleState",
+      "restartPoints": [
+        {
+          "position": "before_single_state_execute",
+          "targets": [
+            "jobmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        },
+        {
+          "position": "after_single_state_pattern",
+          "targets": [
+            "taskmanager"
+          ],
+          "modes": [
+            "GRACEFUL"
+          ],
+          "index": 0
+        }
+      ]
+    }
+  ]
+}
