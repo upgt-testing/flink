@@ -41,6 +41,8 @@ under the License.
 			Kryo File (GroupReduceITCase)
 			-->--add-opens=java.base/java.io=ALL-UNNAMED
 		</surefire.module.config>
+		<!-- Can be overridden with -Drestart.config=... -->
+		<restart.config>${project.basedir}/restart-tests.json</restart.config>
 	</properties>
 
 	<dependencies>
@@ -730,6 +732,9 @@ under the License.
 				<groupId>org.restarttest</groupId>
 				<artifactId>restart-maven-plugin</artifactId>
 				<version>1.0.0-SNAPSHOT</version>
+				<configuration>
+					<configFile>${restart.config}</configFile>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
