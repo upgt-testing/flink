@@ -39,7 +39,7 @@ import org.junit.Test;
 @Deprecated
 public abstract class JavaProgramTestBaseJUnit4 extends AbstractTestBaseJUnit4 {
 
-    private JobExecutionResult latestExecutionResult;
+    protected JobExecutionResult latestExecutionResult;
 
     /**
      * The number of times a test should be repeated.

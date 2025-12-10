@@ -69,7 +69,7 @@ public abstract class StreamFaultToleranceTestBase extends TestLogger {
     protected static final int NUM_TASK_SLOTS = 4;
     protected static final int PARALLELISM = NUM_TASK_MANAGERS * NUM_TASK_SLOTS;
 
-    private static MiniClusterWithClientResource cluster;
+    protected static MiniClusterWithClientResource cluster;
 
     @ClassRule public static TemporaryFolder tempFolder = new TemporaryFolder();
 
