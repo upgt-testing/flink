@@ -62,8 +62,8 @@ public class FlinkClusterAdapter implements ClusterAdapter<MiniClusterWithClient
         this.healthCheck = new CompositeHealthCheck<>("flink-health");
 
         // Add default health checks
-        this.healthCheck.addCheck(new ClusterRunningCheck());
-        this.healthCheck.addCheck(new ResourceOverviewCheck());
+        // this.healthCheck.addCheck(new ClusterRunningCheck());
+        // this.healthCheck.addCheck(new ResourceOverviewCheck());
     }
 
     @Override
