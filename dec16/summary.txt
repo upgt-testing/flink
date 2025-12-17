@@ -1,0 +1,54 @@
+======================================================================
+Test Result Analysis Summary
+======================================================================
+Generated: 2025-12-16 17:02:42
+
+Step 1: Execution Parsing
+----------------------------------------------------------------------
+Total baseline executions: 115
+Total restart executions: 244
+
+Step 2: Failure Analysis
+----------------------------------------------------------------------
+Baseline failures: 8
+Restart failures (baseline passed): 120
+Ignored restart executions (baseline failed): 22
+
+Step 3: Failure Grouping
+----------------------------------------------------------------------
+Unique failure groups: 11
+Total restart failures analyzed: 0
+
+Group Distribution:
+----------------------------------------------------------------------
+Group   1:   95 executions (  0.0%) - Example: org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected.testWriteAvroSpecific @ before_avro_specific_execute/jobmanager
+Group   2:    6 executions (  0.0%) - Example: org.apache.flink.test.streaming.runtime.SinkV2MetricsITCase_RestartInjected.testCommitterMetrics @ during_committer_execution/taskmanager
+Group   3:    5 executions (  0.0%) - Example: org.apache.flink.runtime.operators.lifecycle.BoundedSourceITCase_RestartInjected.test @ before_bounded_source_execute/jobmanager
+Group   4:    1 executions (  0.0%) - Example: org.apache.flink.runtime.operators.lifecycle.PartiallyFinishedSourcesITCase_RestartInjected.test @ during_partially_finished_execute/taskmanager
+Group   5:    1 executions (  0.0%) - Example: org.apache.flink.runtime.operators.lifecycle.StopWithSavepointITCase_RestartInjected.test @ during_stop_with_savepoint_execute/taskmanager
+Group   6:    1 executions (  0.0%) - Example: org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected.testImmediateCheckpointing @ after_job_submit/jobmanager
+Group   7:    1 executions (  0.0%) - Example: org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected.testImmediateCheckpointing @ during_job_running/taskmanager
+Group   8:    1 executions (  0.0%) - Example: org.apache.flink.test.execution.JobStatusChangedListenerITCase_RestartInjected.testJobStatusChangedForCancelledApplication @ during_job_running/taskmanager
+Group   9:    1 executions (  0.0%) - Example: org.apache.flink.test.streaming.runtime.SinkV2MetricsITCase_RestartInjected.testMetrics @ during_sink_metrics_check/taskmanager
+Group  10:    1 executions (  0.0%) - Example: org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected.testCacheProduceAndConsumeWithDifferentPartitioner @ after_job_submit/jobmanager
+Group  11:    1 executions (  0.0%) - Example: org.apache.flink.test.checkpointing.RegionFailoverITCase_RestartInjected.testMultiRegionFailover @ after_job_submit/jobmanager
+
+Baseline Failures Details:
+----------------------------------------------------------------------
+  1. org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected.testRestoreAfterSomeTasksFinished (ignored 4 restart executions)
+  2. org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected.testFailoverAfterSomeTasksFinished (ignored 2 restart executions)
+  3. org.apache.flink.test.execution.JobListenerITCase_RestartInjected.testExecuteCallsJobListenerOnBatchEnvironment (ignored 2 restart executions)
+  4. org.apache.flink.test.execution.JobListenerITCase_RestartInjected.testExecuteCallsJobListenerOnStreamingEnvironment (ignored 2 restart executions)
+  5. org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase_RestartInjected.testTumblingProcessingTimeWindow (ignored 3 restart executions)
+  6. org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase_RestartInjected.testSlidingProcessingTimeWindow (ignored 3 restart executions)
+  7. org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase_RestartInjected.testAggregatingTumblingProcessingTimeWindow (ignored 3 restart executions)
+  8. org.apache.flink.test.checkpointing.ProcessingTimeWindowCheckpointingITCase_RestartInjected.testAggregatingSlidingProcessingTimeWindow (ignored 3 restart executions)
+
+Output Files:
+----------------------------------------------------------------------
+Step 1 results: results/flink/dec16/step1_execution_summary.json
+Step 2 results: results/flink/dec16/step2_failures.json
+Step 3 results: results/flink/dec16/step3_grouped_failures.json
+This summary:   results/flink/dec16/summary.txt
+
+======================================================================
