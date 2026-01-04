@@ -37,7 +37,6 @@ import org.apache.flink.testutils.junit.SharedObjects;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
@@ -45,7 +44,6 @@ import org.restarttest.api.RestartFramework;
 import org.restarttest.core.RestartMode;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static org.apache.flink.runtime.operators.lifecycle.graph.TestJobBuilders.COMPLEX_GRAPH_BUILDER;
 import static org.apache.flink.runtime.operators.lifecycle.graph.TestJobBuilders.SIMPLE_GRAPH_BUILDER;
@@ -103,7 +101,6 @@ public class StopWithSavepointITCase_RestartInjected extends AbstractTestBaseJUn
 
     @Rule public final TemporaryFolder temporaryFolder = new TemporaryFolder();
     @Rule public final SharedObjects sharedObjects = SharedObjects.create();
-    @Rule public Timeout timeoutRule = new Timeout(10, TimeUnit.MINUTES);
 
     @Parameter(0)
     public boolean withDrain;

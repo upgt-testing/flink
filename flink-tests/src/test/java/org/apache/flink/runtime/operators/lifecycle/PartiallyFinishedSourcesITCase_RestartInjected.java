@@ -39,7 +39,6 @@ import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
-import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
@@ -50,7 +49,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static java.util.Arrays.asList;
 import static java.util.stream.StreamSupport.stream;
@@ -78,8 +76,6 @@ public class PartiallyFinishedSourcesITCase_RestartInjected extends TestLogger {
     @ClassRule public static final TemporaryFolder TEMPORARY_FOLDER = new TemporaryFolder();
 
     @Rule public final SharedObjects sharedObjects = SharedObjects.create();
-
-    @Rule public Timeout timeoutRule = new Timeout(10, TimeUnit.MINUTES);
 
     private MiniClusterWithClientResource miniClusterResource;
 

@@ -207,6 +207,10 @@ public class JobStatusChangedListenerITCase_RestartInjected extends TestLogger {
 
             waitForAllTaskRunning(MINI_CLUSTER.getMiniCluster(), jobID, false);
 
+            // DEBUG: Check job status before taskmanager restart
+            JobStatus statusBeforeRestart = client.getJobStatus(jobID).get();
+            System.out.println("DEBUG: Job status BEFORE taskmanager restart: " + statusBeforeRestart);
+
             RestartFramework.at("during_job_running")
                 .on(MINI_CLUSTER)
                 .restart("taskmanager")
@@ -215,6 +219,11 @@ public class JobStatusChangedListenerITCase_RestartInjected extends TestLogger {
                 .execute();
 
             Thread.sleep(100);
+
+            // DEBUG: Check job status after taskmanager restart
+            JobStatus statusAfterRestart = client.getJobStatus(jobID).get();
+            System.out.println("DEBUG: Job status AFTER taskmanager restart: " + statusAfterRestart);
+
             client.cancel(jobID).get();
             while (!client.getJobStatus(jobID).get().equals(JobStatus.CANCELED)) {}
         }

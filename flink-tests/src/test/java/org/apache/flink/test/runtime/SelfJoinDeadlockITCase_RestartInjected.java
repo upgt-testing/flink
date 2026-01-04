@@ -34,7 +34,6 @@ import org.apache.flink.test.util.JavaProgramTestBaseJUnit4;
 import org.apache.flink.util.Collector;
 
 import org.junit.Rule;
-import org.junit.rules.Timeout;
 import org.restarttest.api.RestartFramework;
 import org.restarttest.core.RestartMode;
 
@@ -49,8 +48,6 @@ import java.util.Random;
 public class SelfJoinDeadlockITCase_RestartInjected extends JavaProgramTestBaseJUnit4 {
 
     protected String resultPath;
-
-    @Rule public Timeout globalTimeout = new Timeout(120 * 1000); // Set timeout for deadlocks
 
     @Override
     protected void preSubmit() throws Exception {

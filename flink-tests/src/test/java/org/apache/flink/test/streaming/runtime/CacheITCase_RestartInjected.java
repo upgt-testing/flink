@@ -270,6 +270,9 @@ public class CacheITCase_RestartInjected extends AbstractTestBaseJUnit4 {
         dataStream.sinkTo(getFileSink(outputFile));
         JobClient jobClient = env.executeAsync("Cache Test");
 
+        System.out.println("DEBUG: Job submitted with ID: " + jobClient.getJobID());
+        System.out.println("DEBUG: Job status BEFORE jobmanager restart: " + jobClient.getJobStatus().get());
+
         RestartFramework.at("after_job_submit")
             .on(miniClusterWithClientResource)
             .restart("jobmanager")
@@ -277,7 +280,9 @@ public class CacheITCase_RestartInjected extends AbstractTestBaseJUnit4 {
             .withMode(RestartMode.GRACEFUL)
             .execute();
 
+        System.out.println("DEBUG: JobManager restarted");
         Thread.sleep(300);
+        System.out.println("DEBUG: Job status AFTER jobmanager restart: " + jobClient.getJobStatus().get());
 
         RestartFramework.at("during_cache_processing")
             .on(miniClusterWithClientResource)
@@ -286,6 +291,9 @@ public class CacheITCase_RestartInjected extends AbstractTestBaseJUnit4 {
             .withMode(RestartMode.GRACEFUL)
             .execute();
 
+        System.out.println("DEBUG: TaskManager restarted");
+        System.out.println("DEBUG: Job status AFTER taskmanager restart: " + jobClient.getJobStatus().get());
+        System.out.println("DEBUG: About to call getJobExecutionResult()");
         jobClient.getJobExecutionResult().get();
         assertThat(getFileContent(outputFile)).containsExactlyInAnyOrder(expectedResult);
     }

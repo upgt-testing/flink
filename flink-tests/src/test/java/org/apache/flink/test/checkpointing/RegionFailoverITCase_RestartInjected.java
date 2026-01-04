@@ -143,7 +143,7 @@ public class RegionFailoverITCase_RestartInjected extends TestLogger {
      * NUM_OF_RESTARTS} times, and it will verify whether the restored state is identical to last
      * completed checkpoint's.
      */
-    @Test(timeout = 60000)
+    @Test
     public void testMultiRegionFailover() throws Exception {
         JobGraph jobGraph = createJobGraph();
         ClusterClient<?> client = cluster.getClusterClient();

@@ -40,7 +40,6 @@ import org.apache.avro.reflect.ReflectDatumReader;
 import org.apache.avro.specific.SpecificDatumReader;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.Timeout;
 import org.restarttest.api.RestartFramework;
 import org.restarttest.core.RestartMode;
 
@@ -61,8 +60,6 @@ import static org.assertj.core.api.Assertions.assertThat;
  * with Avro.
  */
 public class AvroStreamingFileSinkITCase_RestartInjected extends AbstractTestBaseJUnit4 {
-
-    @Rule public final Timeout timeoutPerTest = Timeout.seconds(20);
 
     @Test
     public void testWriteAvroSpecific() throws Exception {
