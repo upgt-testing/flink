@@ -29,8 +29,12 @@ Caused by: org.apache.flink.runtime.jobmanager.scheduler.NoResourceAvailableExce
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase_RestartInjected.testSlidingTimeWindow`
-   - Position: after_checkpoint, Target: taskmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.checkpointing.EventTimeWindowCheckpointingITCase_RestartInjected.testSlidingTimeWindow`
+   - "position": "after_checkpoint"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "003-0268cb32"
 
 **Analysis:** NoResourceAvailableException from core Flink scheduler - indicates possible resource management bug after restart.
 
@@ -55,8 +59,12 @@ Caused by: org.apache.flink.runtime.operators.coordination.TaskNotRunningExcepti
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected.testWatermarkForwarding`
-   - Position: during_job_running, Target: taskmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.streaming.runtime.SideOutputITCase_RestartInjected.testWatermarkForwarding`
+   - "position": "during_job_running"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "006-6c971db6"
 
 **Analysis:** TaskNotRunningException from runtime code - possible race condition in task coordination after restart.
 
@@ -81,8 +89,12 @@ Caused by: org.apache.flink.runtime.messages.FlinkJobNotFoundException: Could no
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.runtime.operators.lifecycle.StopWithSavepointITCase_RestartInjected.test`
-   - Position: during_stop_with_savepoint_execute, Target: taskmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.runtime.operators.lifecycle.StopWithSavepointITCase_RestartInjected.test`
+   - "position": "during_stop_with_savepoint_execute"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "003-31659634"
 
 **Analysis:** Job lost after restart - possible issue with job recovery or dispatcher state management.
 
@@ -104,8 +116,12 @@ Caused by: org.apache.flink.runtime.messages.FlinkJobTerminatedWithoutCancellati
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.test.execution.JobStatusChangedListenerITCase_RestartInjected.testJobStatusChangedForCancelledApplication`
-   - Position: during_job_running, Target: taskmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.execution.JobStatusChangedListenerITCase_RestartInjected.testJobStatusChangedForCancelledApplication`
+   - "position": "during_job_running"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "003-b4214a75"
 
 **Analysis:** Job failed instead of being properly cancelled - possible state management issue after restart.
 
@@ -124,8 +140,12 @@ org.apache.flink.runtime.client.JobExecutionException: Job completed with illega
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.test.checkpointing.RegionFailoverITCase_RestartInjected.testMultiRegionFailover`
-   - Position: after_job_submit, Target: jobmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.checkpointing.RegionFailoverITCase_RestartInjected.testMultiRegionFailover`
+   - "position": "after_job_submit"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-97d01b8b"
 
 **Analysis:** Job status corrupted to UNKNOWN - indicates serious state tracking issue after restart.
 
@@ -148,8 +168,12 @@ Caused by: org.apache.flink.runtime.client.JobExecutionException: Job completed 
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected.testCacheProduceAndConsumeWithDifferentPartitioner`
-   - Position: after_job_submit, Target: jobmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.streaming.runtime.CacheITCase_RestartInjected.testCacheProduceAndConsumeWithDifferentPartitioner`
+   - "position": "after_job_submit"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "005-e42bc23c"
 
 **Analysis:** Same as Group 4 - job status corrupted to UNKNOWN after restart.
 
@@ -175,12 +199,42 @@ Caused by: org.apache.flink.util.FlinkExpectedException
 ```
 
 **Test Executions (6 total):**
-1. `org.apache.flink.test.checkpointing.ManualCheckpointITCase_RestartInjected.testTriggeringWhenPeriodicDisabled`
-   - Position: during_keyed_state_processing, Target: taskmanager, Mode: GRACEFUL
-2. `org.apache.flink.api.connector.source.lib.NumberSequenceSourceITCase_RestartInjected.testParallelSourceExecution`
-   - Position: during_source_ingestion, Target: taskmanager, Mode: GRACEFUL
-3. `org.apache.flink.test.streaming.runtime.SinkV2MetricsITCase_RestartInjected.testCommitterMetrics`
-   - Position: during_committer_execution, Target: taskmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.checkpointing.ManualCheckpointITCase_RestartInjected.testTriggeringWhenPeriodicDisabled`
+   - "position": "during_keyed_state_processing"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "004-65516fc0"
+2. Test: `org.apache.flink.api.connector.source.lib.NumberSequenceSourceITCase_RestartInjected.testParallelSourceExecution`
+   - "position": "during_source_ingestion"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "003-d246ed9f"
+3. Test: `org.apache.flink.test.streaming.runtime.SinkV2MetricsITCase_RestartInjected.testCommitterMetrics`
+   - "position": "during_committer_execution"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "006-c17626f9"
+4. Test: `org.apache.flink.test.streaming.runtime.TimestampITCase_RestartInjected.testWatermarkPropagation`
+   - "position": "during_watermark_propagation"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "006-112a917b"
+5. Test: `org.apache.flink.test.streaming.runtime.BroadcastStateITCase_RestartInjected.testKeyedWithBroadcastTranslation`
+   - "position": "during_broadcast_processing"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "003-916dd98b"
+6. Test: `org.apache.flink.test.streaming.runtime.BroadcastStateITCase_RestartInjected.testBroadcastTranslation`
+   - "position": "during_broadcast_processing"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "003-4dffaabf"
 
 **Analysis:** Jobs unexpectedly failing after taskmanager restart - FlinkExpectedException suggests expected behavior, but jobs should recover.
 
@@ -205,8 +259,12 @@ Caused by: java.lang.RuntimeException
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.runtime.operators.lifecycle.PartiallyFinishedSourcesITCase_RestartInjected.test`
-   - Position: during_partially_finished_execute, Target: taskmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.runtime.operators.lifecycle.PartiallyFinishedSourcesITCase_RestartInjected.test`
+   - "position": "during_partially_finished_execute"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "003-691e7a02"
 
 **Analysis:** Failover not recovering - RuntimeException from TestEventSource suggests test code, but failover timeout indicates recovery issue.
 
@@ -228,8 +286,12 @@ java.util.concurrent.BrokenBarrierException
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.test.streaming.runtime.SinkV2MetricsITCase_RestartInjected.testMetrics`
-   - Position: during_sink_metrics_check, Target: taskmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.streaming.runtime.SinkV2MetricsITCase_RestartInjected.testMetrics`
+   - "position": "during_sink_metrics_check"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "006-1a7c65e6"
 
 **Analysis:** BrokenBarrierException from test synchronization code - likely test infrastructure issue.
 
@@ -256,8 +318,12 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.flink.runti
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected.testImmediateCheckpointing`
-   - Position: after_job_submit, Target: jobmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected.testImmediateCheckpointing`
+   - "position": "after_job_submit"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-7f92108e"
 
 **Analysis:** NPE from restarttest infrastructure - miniCluster is null. RestartTest framework issue.
 
@@ -282,8 +348,12 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.flink.runti
 ```
 
 **Test Executions (1 total):**
-1. `org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected.testImmediateCheckpointing`
-   - Position: during_job_running, Target: taskmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.test.checkpointing.CheckpointAfterAllTasksFinishedITCase_RestartInjected.testImmediateCheckpointing`
+   - "position": "during_job_running"
+   - "target": "taskmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "003-c0b59e24"
 
 **Analysis:** NPE from restarttest infrastructure - miniCluster is null. RestartTest framework issue.
 
@@ -311,12 +381,67 @@ Caused by: java.lang.IllegalStateException: JobManager restart requires HA leade
 ```
 
 **Test Executions (100 total):**
-1. `org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected.testWriteAvroSpecific`
-   - Position: before_avro_specific_execute, Target: jobmanager, Mode: GRACEFUL
-2. `org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected.testWriteAvroGeneric`
-   - Position: before_avro_generic_execute, Target: jobmanager, Mode: GRACEFUL
-3. `org.apache.flink.hdfstests.ContinuousFileProcessingITCase_RestartInjected.testProgram`
-   - Position: before_file_processing_execute, Target: jobmanager, Mode: GRACEFUL
+1. Test: `org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected.testWriteAvroSpecific`
+   - "position": "before_avro_specific_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-b4caf15a"
+2. Test: `org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected.testWriteAvroGeneric`
+   - "position": "before_avro_generic_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-24d6598c"
+3. Test: `org.apache.flink.formats.avro.AvroStreamingFileSinkITCase_RestartInjected.testWriteAvroReflect`
+   - "position": "before_avro_reflect_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-a7c22dd8"
+4. Test: `org.apache.flink.hdfstests.ContinuousFileProcessingITCase_RestartInjected.testProgram`
+   - "position": "before_file_processing_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-c7ef6824"
+5. Test: `org.apache.flink.hdfstests.DistributedCacheDfsTest_RestartInjected.testDistributedFileViaDFS`
+   - "position": "before_dfs_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-c708c58f"
+6. Test: `org.apache.flink.hdfstests.DistributedCacheDfsTest_RestartInjected.testSubmittingJobViaRestClusterClient`
+   - "position": "before_rest_client_submit"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-dd333458"
+7. Test: `org.apache.flink.cep.CEPITCase_RestartInjected.testSimplePatternCEP`
+   - "position": "before_cep_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-1e85c829"
+8. Test: `org.apache.flink.cep.CEPITCase_RestartInjected.testProcessingTimeWithinPreviousAndCurrent`
+   - "position": "before_window_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "005-d46d649e"
+9. Test: `org.apache.flink.cep.CEPITCase_RestartInjected.testProcessingTimeWithinBetweenFirstAndLast`
+   - "position": "before_window_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "002-afc0a4f0"
+10. Test: `org.apache.flink.cep.CEPITCase_RestartInjected.testSimpleKeyedPatternCEP`
+   - "position": "before_keyed_cep_execute"
+   - "target": "jobmanager"
+   - "mode": "GRACEFUL"
+   - "index": "0"
+   - "executionDir": "005-48d76e63"
+... (90 more tests)
 
 **Analysis:** RestartTest configuration issue - 100 tests failed due to missing HA leadership control configuration. RestartTest framework setup issue.
 
