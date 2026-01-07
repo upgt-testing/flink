@@ -1,0 +1,112 @@
+diff --git a/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobResult.java b/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobResult.java
+index cd8bd007fb1..5594d656d7b 100644
+--- a/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobResult.java
++++ b/flink-runtime/src/main/java/org/apache/flink/runtime/jobmaster/JobResult.java
+@@ -66,12 +66,20 @@ public class JobResult implements Serializable {
+     /** Stores the cause of the job failure, or {@code null} if the job finished successfully. */
+     @Nullable private final SerializedThrowable serializedThrowable;
+ 
++    /**
++     * Stores the original JobStatus from the ExecutionGraph. This is needed because
++     * ApplicationStatus.fromJobStatus() may return UNKNOWN for locally terminal states
++     * like SUSPENDED, losing the original state information.
++     */
++    @Nullable private final JobStatus jobStatus;
++
+     private JobResult(
+             final JobID jobId,
+             final ApplicationStatus applicationStatus,
+             final Map<String, SerializedValue<OptionalFailure<Object>>> accumulatorResults,
+             final long netRuntime,
+-            @Nullable final SerializedThrowable serializedThrowable) {
++            @Nullable final SerializedThrowable serializedThrowable,
++            @Nullable final JobStatus jobStatus) {
+ 
+         checkArgument(netRuntime >= 0, "netRuntime must be greater than or equals 0");
+ 
+@@ -80,6 +88,7 @@ public class JobResult implements Serializable {
+         this.accumulatorResults = requireNonNull(accumulatorResults);
+         this.netRuntime = netRuntime;
+         this.serializedThrowable = serializedThrowable;
++        this.jobStatus = jobStatus;
+     }
+ 
+     /** Returns {@code true} if the job finished successfully. */
+@@ -144,11 +153,38 @@ public class JobResult implements Serializable {
+                 exception = new JobExecutionException(jobId, "Job execution failed.", cause);
+             } else if (applicationStatus == ApplicationStatus.CANCELED) {
+                 exception = new JobCancellationException(jobId, "Job was cancelled.", cause);
++            } else if (applicationStatus == ApplicationStatus.UNKNOWN) {
++                // UNKNOWN status occurs when the job is in a locally terminal state (like SUSPENDED)
++                // that has no mapping in ApplicationStatus. Provide informative error based on
++                // the actual JobStatus if available.
++                if (jobStatus == JobStatus.SUSPENDED) {
++                    exception =
++                            new JobExecutionException(
++                                    jobId,
++                                    "Job is in state SUSPENDED. This commonly happens when the "
++                                            + "JobManager lost leadership. The job may recover "
++                                            + "automatically if High Availability and a persistent "
++                                            + "job store are configured. If recovery is not possible "
++                                            + "(e.g., non-persistent ExecutionPlanStore), the job "
++                                            + "needs to be resubmitted.",
++                                    cause);
++                } else {
++                    exception =
++                            new JobExecutionException(
++                                    jobId,
++                                    "Job reached a terminal state without a corresponding "
++                                            + "ApplicationStatus. JobStatus="
++                                            + jobStatus
++                                            + ", ApplicationStatus="
++                                            + applicationStatus
++                                            + ".",
++                                    cause);
++                }
+             } else {
+                 exception =
+                         new JobExecutionException(
+                                 jobId,
+-                                "Job completed with illegal application status: "
++                                "Job completed with unexpected application status: "
+                                         + applicationStatus
+                                         + '.',
+                                 cause);
+@@ -172,6 +208,8 @@ public class JobResult implements Serializable {
+ 
+         private SerializedThrowable serializedThrowable;
+ 
++        private JobStatus jobStatus;
++
+         public Builder jobId(final JobID jobId) {
+             this.jobId = jobId;
+             return this;
+@@ -198,13 +236,19 @@ public class JobResult implements Serializable {
+             return this;
+         }
+ 
++        public Builder jobStatus(final JobStatus jobStatus) {
++            this.jobStatus = jobStatus;
++            return this;
++        }
++
+         public JobResult build() {
+             return new JobResult(
+                     jobId,
+                     applicationStatus,
+                     accumulatorResults == null ? Collections.emptyMap() : accumulatorResults,
+                     netRuntime,
+-                    serializedThrowable);
++                    serializedThrowable,
++                    jobStatus);
+         }
+     }
+ 
+@@ -232,6 +276,7 @@ public class JobResult implements Serializable {
+ 
+         final JobResult.Builder builder = new JobResult.Builder();
+         builder.jobId(jobId);
++        builder.jobStatus(jobStatus);
+ 
+         builder.applicationStatus(ApplicationStatus.fromJobStatus(accessExecutionGraph.getState()));
+ 

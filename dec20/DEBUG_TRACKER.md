@@ -151,7 +151,7 @@ org.apache.flink.runtime.client.JobExecutionException: Job completed with illega
 
 ---
 
-### [ ] Group 5: JobExecutionException (UNKNOWN status - variant)
+### [DUP-G4] Group 5: JobExecutionException (UNKNOWN status - variant)
 **Group ID:** 5
 
 **Raw Stacktrace Sample:**
