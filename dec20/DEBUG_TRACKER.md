@@ -10,7 +10,7 @@ This document tracks 12 failure groups ordered by likelihood of being an actual 
 
 ## HIGH PRIORITY - Likely Actual Bugs
 
-### [ ] Group 3: NoResourceAvailableException
+### [FP] Group 3: NoResourceAvailableException
 **Group ID:** 3
 
 **Raw Stacktrace Sample:**
@@ -36,11 +36,9 @@ Caused by: org.apache.flink.runtime.jobmanager.scheduler.NoResourceAvailableExce
    - "index": "0"
    - "executionDir": "003-0268cb32"
 
-**Analysis:** NoResourceAvailableException from core Flink scheduler - indicates possible resource management bug after restart.
-
 ---
 
-### [ ] Group 10: TaskNotRunningException
+### [FP] Group 10: TaskNotRunningException
 **Group ID:** 10
 
 **Raw Stacktrace Sample:**
@@ -66,11 +64,9 @@ Caused by: org.apache.flink.runtime.operators.coordination.TaskNotRunningExcepti
    - "index": "0"
    - "executionDir": "006-6c971db6"
 
-**Analysis:** TaskNotRunningException from runtime code - possible race condition in task coordination after restart.
-
 ---
 
-### [ ] Group 7: FlinkJobNotFoundException
+### [FP] Group 7: FlinkJobNotFoundException
 **Group ID:** 7
 
 **Raw Stacktrace Sample:**
@@ -96,11 +92,9 @@ Caused by: org.apache.flink.runtime.messages.FlinkJobNotFoundException: Could no
    - "index": "0"
    - "executionDir": "003-31659634"
 
-**Analysis:** Job lost after restart - possible issue with job recovery or dispatcher state management.
-
 ---
 
-### [ ] Group 11: FlinkJobTerminatedWithoutCancellationException
+### [FP] Group 11: FlinkJobTerminatedWithoutCancellationException
 **Group ID:** 11
 
 **Raw Stacktrace Sample:**
@@ -123,11 +117,9 @@ Caused by: org.apache.flink.runtime.messages.FlinkJobTerminatedWithoutCancellati
    - "index": "0"
    - "executionDir": "003-b4214a75"
 
-**Analysis:** Job failed instead of being properly cancelled - possible state management issue after restart.
-
 ---
 
-### [ ] Group 4: JobExecutionException (UNKNOWN status)
+### [BUG] Group 4: JobExecutionException (UNKNOWN status)
 **Group ID:** 4
 
 **Raw Stacktrace Sample:**
@@ -146,8 +138,6 @@ org.apache.flink.runtime.client.JobExecutionException: Job completed with illega
    - "mode": "GRACEFUL"
    - "index": "0"
    - "executionDir": "002-97d01b8b"
-
-**Analysis:** Job status corrupted to UNKNOWN - indicates serious state tracking issue after restart.
 
 ---
 
@@ -175,11 +165,9 @@ Caused by: org.apache.flink.runtime.client.JobExecutionException: Job completed 
    - "index": "0"
    - "executionDir": "005-e42bc23c"
 
-**Analysis:** Same as Group 4 - job status corrupted to UNKNOWN after restart.
-
 ---
 
-### [ ] Group 2: FlinkExpectedException (Job FAILED instead of RUNNING)
+### [FP] Group 2: FlinkExpectedException (Job FAILED instead of RUNNING)
 **Group ID:** 2
 
 **Raw Stacktrace Sample:**
@@ -236,11 +224,9 @@ Caused by: org.apache.flink.util.FlinkExpectedException
    - "index": "0"
    - "executionDir": "003-4dffaabf"
 
-**Analysis:** Jobs unexpectedly failing after taskmanager restart - FlinkExpectedException suggests expected behavior, but jobs should recover.
-
 ---
 
-### [ ] Group 6: RuntimeException (Failover timeout)
+### [FP] Group 6: RuntimeException (Failover timeout)
 **Group ID:** 6
 
 **Raw Stacktrace Sample:**
@@ -266,13 +252,11 @@ Caused by: java.lang.RuntimeException
    - "index": "0"
    - "executionDir": "003-691e7a02"
 
-**Analysis:** Failover not recovering - RuntimeException from TestEventSource suggests test code, but failover timeout indicates recovery issue.
-
 ---
 
 ## MEDIUM PRIORITY - Test Infrastructure or Test Code Issues
 
-### [ ] Group 12: BrokenBarrierException
+### [FP] Group 12: BrokenBarrierException
 **Group ID:** 12
 
 **Raw Stacktrace Sample:**
@@ -293,13 +277,11 @@ java.util.concurrent.BrokenBarrierException
    - "index": "0"
    - "executionDir": "006-1a7c65e6"
 
-**Analysis:** BrokenBarrierException from test synchronization code - likely test infrastructure issue.
-
 ---
 
 ## LOW PRIORITY - RestartTest Infrastructure Issues
 
-### [ ] Group 8: NullPointerException (restartJobManagerComponent)
+### [FP] Group 8: NullPointerException (restartJobManagerComponent)
 **Group ID:** 8
 
 **Raw Stacktrace Sample:**
@@ -325,11 +307,9 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.flink.runti
    - "index": "0"
    - "executionDir": "002-7f92108e"
 
-**Analysis:** NPE from restarttest infrastructure - miniCluster is null. RestartTest framework issue.
-
 ---
 
-### [ ] Group 9: NullPointerException (restartTaskManager)
+### [FP] Group 9: NullPointerException (restartTaskManager)
 **Group ID:** 9
 
 **Raw Stacktrace Sample:**
@@ -355,11 +335,9 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.flink.runti
    - "index": "0"
    - "executionDir": "003-c0b59e24"
 
-**Analysis:** NPE from restarttest infrastructure - miniCluster is null. RestartTest framework issue.
-
 ---
 
-### [ ] Group 1: IllegalStateException (HA leadership control required)
+### [FP] Group 1: IllegalStateException (HA leadership control required)
 **Group ID:** 1
 
 **Raw Stacktrace Sample:**
@@ -443,8 +421,6 @@ Caused by: java.lang.IllegalStateException: JobManager restart requires HA leade
    - "executionDir": "005-48d76e63"
 ... (90 more tests)
 
-**Analysis:** RestartTest configuration issue - 100 tests failed due to missing HA leadership control configuration. RestartTest framework setup issue.
-
 ---
 
 ## Summary Statistics
@@ -453,11 +429,3 @@ Caused by: java.lang.IllegalStateException: JobManager restart requires HA leade
 - **High Priority (Likely Bugs):** 8 groups
 - **Medium Priority (Test Infrastructure):** 1 group
 - **Low Priority (RestartTest Issues):** 3 groups
-
-**Key Findings:**
-- Groups 3, 10, 7, 11, 4, 5: Core runtime issues with resource management, job state, and coordination
-- Group 2: Jobs failing unexpectedly after taskmanager restarts (6 occurrences)
-- Group 6: Failover recovery timeout issue
-- Group 1: Configuration issue affecting 100 test executions (most common failure)
-- Groups 8, 9: RestartTest infrastructure NPEs (same test, different restart points)
-- Group 12: Test synchronization issue
