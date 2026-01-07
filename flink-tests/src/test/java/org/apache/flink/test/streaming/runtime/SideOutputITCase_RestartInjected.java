@@ -20,6 +20,7 @@ package org.apache.flink.test.streaming.runtime;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.functions.MapFunction;
+import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.api.connector.source.ReaderOutput;
 import org.apache.flink.api.connector.source.SourceReader;
@@ -100,6 +101,7 @@ public class SideOutputITCase_RestartInjected extends AbstractTestBaseJUnit4 imp
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(3);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
 
         DataStream<Integer> dataStream =
                 env.fromSource(

@@ -19,6 +19,7 @@ package org.apache.flink.test.streaming.runtime;
 
 import org.apache.flink.api.common.JobID;
 import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
+import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.api.connector.sink2.Sink;
 import org.apache.flink.api.connector.sink2.WriterInitContext;
 import org.apache.flink.configuration.Configuration;
@@ -82,6 +83,7 @@ public class SinkV2MetricsITCase_RestartInjected extends TestLogger {
                             .setNumberTaskManagers(1)
                             .setNumberSlotsPerTaskManager(DEFAULT_PARALLELISM)
                             .setConfiguration(reporter.addToConfiguration(new Configuration()))
+                            .withHaLeadershipControl()
                             .build());
 
     @Test
@@ -147,6 +149,7 @@ public class SinkV2MetricsITCase_RestartInjected extends TestLogger {
     public void testCommitterMetrics() throws Exception {
         final int numCommittables = 7;
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
 
         // make sure all parallel instances have processed the records once before validating
         // metrics

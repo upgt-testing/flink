@@ -87,6 +87,7 @@ public class JobStatusChangedListenerITCase_RestartInjected extends TestLogger {
                             .setConfiguration(createConfiguration())
                             .setNumberTaskManagers(1)
                             .setNumberSlotsPerTaskManager(PARALLELISM)
+                            .withHaLeadershipControl()
                             .build());
 
     private static List<JobStatusChangedEvent> statusChangedEvents = new ArrayList<>();
@@ -188,6 +189,7 @@ public class JobStatusChangedListenerITCase_RestartInjected extends TestLogger {
 
         try (StreamExecutionEnvironment env =
                 StreamExecutionEnvironment.getExecutionEnvironment(configuration)) {
+            RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
             final DataStream<Long> source = env.addSource(new InfiniteLongSourceFunction());
             source.addSink(new SleepingSink());
 

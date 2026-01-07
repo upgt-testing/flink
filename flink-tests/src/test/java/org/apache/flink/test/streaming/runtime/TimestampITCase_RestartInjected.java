@@ -21,6 +21,7 @@ package org.apache.flink.test.streaming.runtime;
 import org.apache.flink.api.common.JobID;
 import org.apache.flink.api.common.JobStatus;
 import org.apache.flink.api.common.eventtime.AscendingTimestampsWatermarks;
+import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.api.common.eventtime.NoWatermarksGenerator;
 import org.apache.flink.api.common.eventtime.TimestampAssigner;
 import org.apache.flink.api.common.eventtime.TimestampAssignerSupplier;
@@ -98,6 +99,7 @@ public class TimestampITCase_RestartInjected extends TestLogger {
                             .setConfiguration(getConfiguration())
                             .setNumberTaskManagers(NUM_TASK_MANAGERS)
                             .setNumberSlotsPerTaskManager(NUM_TASK_SLOTS)
+                            .withHaLeadershipControl()
                             .build());
 
     private static Configuration getConfiguration() {
@@ -131,6 +133,7 @@ public class TimestampITCase_RestartInjected extends TestLogger {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         env.setParallelism(PARALLELISM);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
 
         DataStream<Integer> source1 =
                 env.addSource(new MyTimestampSource(initialTime, numWatermarks));

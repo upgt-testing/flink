@@ -33,6 +33,7 @@ import org.apache.flink.runtime.testutils.CommonTestUtils;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.v2.DiscardingSink;
 import org.apache.flink.streaming.util.CheckpointStorageUtils;
+import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.test.util.AbstractTestBaseJUnit4;
 import org.apache.flink.util.Collector;
 import org.restarttest.api.RestartFramework;
@@ -74,6 +75,7 @@ public class ManualCheckpointITCase_RestartInjected extends AbstractTestBaseJUni
         int parallelism = MINI_CLUSTER_RESOURCE.getNumberSlots();
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(parallelism);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
         storageConfigurer.accept(temporaryFolder.newFolder().toURI().toString(), env);
 
         env.fromSource(

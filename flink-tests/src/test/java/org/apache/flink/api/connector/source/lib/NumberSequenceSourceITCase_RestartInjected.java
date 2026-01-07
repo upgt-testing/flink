@@ -69,6 +69,7 @@ public class NumberSequenceSourceITCase_RestartInjected extends TestLogger {
                     new MiniClusterResourceConfiguration.Builder()
                             .setNumberTaskManagers(1)
                             .setNumberSlotsPerTaskManager(PARALLELISM)
+                            .withHaLeadershipControl()
                             .build());
 
     // ------------------------------------------------------------------------
@@ -78,6 +79,7 @@ public class NumberSequenceSourceITCase_RestartInjected extends TestLogger {
         COLLECTED_RESULTS.clear();
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(PARALLELISM);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
 
         final DataStream<Long> stream =
                 env.fromSource(

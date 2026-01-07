@@ -319,7 +319,7 @@ public class EventTimeWindowCheckpointingITCase_RestartInjected extends TestLogg
                 StreamExecutionEnvironment.getExecutionEnvironment(configuration);
         env.setParallelism(PARALLELISM);
         env.enableCheckpointing(100);
-        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 1, 0L);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
         env.getConfig().setUseSnapshotCompression(true);
 
         env.addSource(
@@ -431,7 +431,7 @@ public class EventTimeWindowCheckpointingITCase_RestartInjected extends TestLogg
         env.setParallelism(PARALLELISM);
         env.setMaxParallelism(maxParallelism);
         env.enableCheckpointing(100);
-        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 1, 0L);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
         env.getConfig().setUseSnapshotCompression(true);
 
         env.addSource(
@@ -541,7 +541,7 @@ public class EventTimeWindowCheckpointingITCase_RestartInjected extends TestLogg
         env.setMaxParallelism(2 * PARALLELISM);
         env.setParallelism(PARALLELISM);
         env.enableCheckpointing(100);
-        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 1, 0L);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
         env.getConfig().setUseSnapshotCompression(true);
 
         env.addSource(
@@ -644,7 +644,7 @@ public class EventTimeWindowCheckpointingITCase_RestartInjected extends TestLogg
                 StreamExecutionEnvironment.getExecutionEnvironment(configuration);
         env.setParallelism(PARALLELISM);
         env.enableCheckpointing(100);
-        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 1, 0L);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
         env.getConfig().setUseSnapshotCompression(true);
 
         env.addSource(
@@ -749,7 +749,7 @@ public class EventTimeWindowCheckpointingITCase_RestartInjected extends TestLogg
                 StreamExecutionEnvironment.getExecutionEnvironment(configuration);
         env.setParallelism(PARALLELISM);
         env.enableCheckpointing(100);
-        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 1, 0L);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
         env.getConfig().setUseSnapshotCompression(true);
 
         env.addSource(

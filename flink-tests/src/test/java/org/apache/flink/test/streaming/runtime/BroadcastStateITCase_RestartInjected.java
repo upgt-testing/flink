@@ -21,6 +21,7 @@ package org.apache.flink.test.streaming.runtime;
 import org.apache.flink.api.common.functions.OpenContext;
 import org.apache.flink.api.common.state.MapStateDescriptor;
 import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
+import org.apache.flink.streaming.util.RestartStrategyUtils;
 import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.streaming.api.datastream.BroadcastStream;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -70,6 +71,7 @@ public class BroadcastStateITCase_RestartInjected extends AbstractTestBaseJUnit4
         expected.put(5L, "test:5");
 
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
 
         final DataStream<Long> srcOne =
                 env.fromSequence(0L, 5L)
@@ -149,6 +151,7 @@ public class BroadcastStateITCase_RestartInjected extends AbstractTestBaseJUnit4
         expected.put(5L, "test:5");
 
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
 
         final DataStream<Long> srcOne =
                 env.fromSequence(0L, 5L)

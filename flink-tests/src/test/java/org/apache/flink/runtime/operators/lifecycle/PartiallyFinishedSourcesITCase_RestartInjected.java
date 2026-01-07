@@ -179,7 +179,7 @@ public class PartiallyFinishedSourcesITCase_RestartInjected extends TestLogger {
                 sharedObjects,
                 cfg -> {},
                 env -> {
-                    RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 1, 0L);
+                    RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
                     // checkpoints can hang (because of not yet fixed bugs and triggering
                     // checkpoint while the source finishes), so we reduce the timeout to
                     // avoid hanging for too long.

@@ -286,7 +286,7 @@ public class TestJobBuilders {
         StreamExecutionEnvironment env =
                 StreamExecutionEnvironment.getExecutionEnvironment(configuration);
         env.setParallelism(4);
-        RestartStrategyUtils.configureNoRestartStrategy(env);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
         env.enableCheckpointing(200); // shouldn't matter
         env.getCheckpointConfig().setCheckpointingConsistencyMode(CheckpointingMode.EXACTLY_ONCE);
         env.getConfig().setAutoWatermarkInterval(50);

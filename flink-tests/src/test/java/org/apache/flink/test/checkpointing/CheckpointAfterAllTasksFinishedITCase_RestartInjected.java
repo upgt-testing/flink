@@ -39,7 +39,8 @@ import org.apache.flink.streaming.api.operators.AbstractStreamOperator;
 import org.apache.flink.streaming.api.operators.OneInputStreamOperator;
 import org.apache.flink.streaming.runtime.streamrecord.StreamRecord;
 import org.apache.flink.streaming.util.RestartStrategyUtils;
-import org.apache.flink.test.util.AbstractTestBaseJUnit4;
+import org.apache.flink.test.junit5.MiniClusterExtension;
+import org.apache.flink.runtime.testutils.MiniClusterResourceConfiguration;
 import org.apache.flink.testutils.junit.SharedObjectsExtension;
 import org.apache.flink.testutils.junit.SharedReference;
 import org.restarttest.api.RestartFramework;
@@ -60,7 +61,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Tests an immediate checkpoint should be triggered right after all tasks reached the end of data.
  */
-public class CheckpointAfterAllTasksFinishedITCase_RestartInjected extends AbstractTestBaseJUnit4 {
+public class CheckpointAfterAllTasksFinishedITCase_RestartInjected {
     private static final int SMALL_SOURCE_NUM_RECORDS = 20;
     private static final int BIG_SOURCE_NUM_RECORDS = 100;
 
@@ -69,6 +70,15 @@ public class CheckpointAfterAllTasksFinishedITCase_RestartInjected extends Abstr
     private SharedReference<List<Integer>> bigResult;
 
     @TempDir private java.nio.file.Path tmpDir;
+
+    @RegisterExtension
+    static final MiniClusterExtension MINI_CLUSTER_RESOURCE =
+            new MiniClusterExtension(
+                    new MiniClusterResourceConfiguration.Builder()
+                            .setNumberTaskManagers(1)
+                            .setNumberSlotsPerTaskManager(4)
+                            .withHaLeadershipControl()
+                            .build());
 
     @RegisterExtension
     private final SharedObjectsExtension sharedObjects = SharedObjectsExtension.create();
@@ -85,7 +95,7 @@ public class CheckpointAfterAllTasksFinishedITCase_RestartInjected extends Abstr
 
     @Test
     public void testImmediateCheckpointing() throws Exception {
-        RestartStrategyUtils.configureNoRestartStrategy(env);
+        RestartStrategyUtils.configureFixedDelayRestartStrategy(env, 5, 1000L);
         // Checkpointing is enabled with a large interval, and no checkpoints will be triggered.
         env.enableCheckpointing(
                 Duration.ofNanos(Long.MAX_VALUE) /* max duration allowed by FLINK */.toMillis());

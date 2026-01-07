@@ -72,6 +72,7 @@ public abstract class AbstractTestBaseJUnit4 extends TestLogger {
                     new MiniClusterResourceConfiguration.Builder()
                             .setNumberTaskManagers(1)
                             .setNumberSlotsPerTaskManager(DEFAULT_PARALLELISM)
+                            .withHaLeadershipControl()
                             .build());
 
     @ClassRule public static final TemporaryFolder TEMPORARY_FOLDER = new TemporaryFolder();
