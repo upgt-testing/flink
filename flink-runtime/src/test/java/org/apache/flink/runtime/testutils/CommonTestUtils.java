@@ -52,6 +52,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -69,6 +70,9 @@ public class CommonTestUtils {
     private static final Logger LOG = LoggerFactory.getLogger(CommonTestUtils.class);
 
     private static final long RETRY_INTERVAL = 100L;
+
+    /** Default timeout for waitForAllTaskRunning methods (5 minutes). */
+    private static final Duration DEFAULT_TASK_RUNNING_TIMEOUT = Duration.ofMinutes(5);
 
     /**
      * Gets the classpath with which the current JVM was started.
@@ -178,9 +182,61 @@ public class CommonTestUtils {
         }
     }
 
+    /**
+     * Waits until the given condition is met or timeout expires.
+     *
+     * @param condition the condition to wait for
+     * @param timeout maximum time to wait
+     * @throws TimeoutException if condition is not met within timeout
+     * @throws Exception if condition evaluation throws
+     */
+    public static void waitUntilCondition(
+            SupplierWithException<Boolean, Exception> condition, Duration timeout) throws Exception {
+        waitUntilCondition(condition, RETRY_INTERVAL, timeout);
+    }
+
+    /**
+     * Waits until the given condition is met or timeout expires.
+     *
+     * @param condition the condition to wait for
+     * @param retryIntervalMillis interval between condition checks
+     * @param timeout maximum time to wait
+     * @throws TimeoutException if condition is not met within timeout
+     * @throws Exception if condition evaluation throws
+     */
+    public static void waitUntilCondition(
+            SupplierWithException<Boolean, Exception> condition,
+            long retryIntervalMillis,
+            Duration timeout)
+            throws Exception {
+        long deadlineMillis = System.currentTimeMillis() + timeout.toMillis();
+        while (!condition.get()) {
+            if (System.currentTimeMillis() >= deadlineMillis) {
+                throw new TimeoutException(
+                        "Condition was not met within " + timeout.toMillis() + " ms");
+            }
+            Thread.sleep(retryIntervalMillis);
+        }
+    }
+
     public static void waitForAllTaskRunning(
             MiniCluster miniCluster, JobID jobId, boolean allowFinished) throws Exception {
-        waitForAllTaskRunning(() -> getGraph(miniCluster, jobId), allowFinished);
+        waitForAllTaskRunning(miniCluster, jobId, allowFinished, DEFAULT_TASK_RUNNING_TIMEOUT);
+    }
+
+    /**
+     * Waits for all tasks of the job to be in RUNNING state with a specified timeout.
+     *
+     * @param miniCluster the mini cluster
+     * @param jobId the job ID to wait for
+     * @param allowFinished whether to allow FINISHED state
+     * @param timeout maximum time to wait
+     * @throws TimeoutException if tasks don't reach RUNNING state within timeout
+     */
+    public static void waitForAllTaskRunning(
+            MiniCluster miniCluster, JobID jobId, boolean allowFinished, Duration timeout)
+            throws Exception {
+        waitForAllTaskRunning(() -> getGraph(miniCluster, jobId), allowFinished, timeout);
     }
 
     private static AccessExecutionGraph getGraph(MiniCluster miniCluster, JobID jobId)
@@ -191,6 +247,22 @@ public class CommonTestUtils {
     public static void waitForAllTaskRunning(
             SupplierWithException<AccessExecutionGraph, Exception> executionGraphSupplier,
             boolean allowFinished)
+            throws Exception {
+        waitForAllTaskRunning(executionGraphSupplier, allowFinished, DEFAULT_TASK_RUNNING_TIMEOUT);
+    }
+
+    /**
+     * Waits for all tasks to be in RUNNING state with a specified timeout.
+     *
+     * @param executionGraphSupplier supplier for the execution graph
+     * @param allowFinished whether to allow FINISHED state
+     * @param timeout maximum time to wait
+     * @throws TimeoutException if tasks don't reach RUNNING state within timeout
+     */
+    public static void waitForAllTaskRunning(
+            SupplierWithException<AccessExecutionGraph, Exception> executionGraphSupplier,
+            boolean allowFinished,
+            Duration timeout)
             throws Exception {
         Predicate<AccessExecutionVertex> subtaskPredicate =
                 task -> {
@@ -224,11 +296,25 @@ public class CommonTestUtils {
                                             jobVertex ->
                                                     Arrays.stream(jobVertex.getTaskVertices())
                                                             .allMatch(subtaskPredicate));
-                });
+                },
+                timeout);
     }
 
     public static void waitForAllTaskRunning(
             SupplierWithException<JobDetailsInfo, Exception> jobDetailsSupplier) throws Exception {
+        waitForAllTaskRunning(jobDetailsSupplier, DEFAULT_TASK_RUNNING_TIMEOUT);
+    }
+
+    /**
+     * Waits for all tasks to be in RUNNING state with a specified timeout.
+     *
+     * @param jobDetailsSupplier supplier for job details info
+     * @param timeout maximum time to wait
+     * @throws TimeoutException if tasks don't reach RUNNING state within timeout
+     */
+    public static void waitForAllTaskRunning(
+            SupplierWithException<JobDetailsInfo, Exception> jobDetailsSupplier, Duration timeout)
+            throws Exception {
         waitUntilCondition(
                 () -> {
                     final JobDetailsInfo jobDetailsInfo = jobDetailsSupplier.get();
@@ -246,7 +332,8 @@ public class CommonTestUtils {
                         }
                     }
                     return true;
-                });
+                },
+                timeout);
     }
 
     public static void waitForNoTaskRunning(
