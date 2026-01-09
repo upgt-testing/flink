@@ -46,7 +46,8 @@ under the License.
 		</surefire.module.config>
 		<!-- Can be overridden with -Drestart.config=... -->
 		<restart.config>${project.basedir}/restart-tests.json</restart.config>
-	</properties>
+	    <restart.tracking.agent>/workspace/RestartTestingFramework/restart-tracking-agent/target/restart-tracking-agent-1.0.0-SNAPSHOT.jar</restart.tracking.agent>
+  </properties>
 
 	<dependencies>
 
@@ -297,7 +298,14 @@ under the License.
 					<configFile>${restart.config}</configFile>
 				</configuration>
 			</plugin>
-		</plugins>
+		      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>-javaagent:${restart.tracking.agent}</argLine>
+        </configuration>
+      </plugin>
+    </plugins>
 	</build>
 
 	<profiles>
@@ -339,7 +347,14 @@ under the License.
 							</execution>
 						</executions>
 					</plugin>
-				</plugins>
+				      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>-javaagent:${restart.tracking.agent}</argLine>
+        </configuration>
+      </plugin>
+    </plugins>
 			</build>
 		</profile>
 	</profiles>
